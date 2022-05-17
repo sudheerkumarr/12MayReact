@@ -137,20 +137,13 @@ public class Basics {
 		System.out.println(basics.num1);
 		System.out.println(Basics.num1);
 		
-		System.out.println();
 		// Accessing  methods
-		basics.m1(); //10
+		basics.m1();
 		//System.out.println(basics.i); // local variables can't be accessed outside of a method
 		System.out.println(j); // 100
 		
-		System.out.println();
 		// accessing static method
-		System.out.println(add(10,20)); //30
-		System.out.println(Basics.add(20, 30));//50
-		System.out.println(basics.add(30, 40)); //70
-		
-		System.out.println();
-		basics.m2();
+		System.out.println(add(10,20));
 
 	}
 
@@ -166,14 +159,6 @@ public class Basics {
 		int z = x+y;
 		return z;
 		
-	}
-	
-	// non static area
-	void m2() {
-		//access static members
-		System.out.println(num1);
-		// non static members
-		System.out.println(x);
 	}
 	
 

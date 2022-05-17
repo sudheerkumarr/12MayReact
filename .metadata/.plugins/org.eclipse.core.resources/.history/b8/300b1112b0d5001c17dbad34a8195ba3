@@ -148,9 +148,6 @@ public class Basics {
 		System.out.println(add(10,20)); //30
 		System.out.println(Basics.add(20, 30));//50
 		System.out.println(basics.add(30, 40)); //70
-		
-		System.out.println();
-		basics.m2();
 
 	}
 
@@ -171,9 +168,8 @@ public class Basics {
 	// non static area
 	void m2() {
 		//access static members
-		System.out.println(num1);
+		
 		// non static members
-		System.out.println(x);
 	}
 	
 

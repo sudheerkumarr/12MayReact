@@ -149,7 +149,6 @@ public class Basics {
 		System.out.println(Basics.add(20, 30));//50
 		System.out.println(basics.add(30, 40)); //70
 		
-		System.out.println();
 		basics.m2();
 
 	}
