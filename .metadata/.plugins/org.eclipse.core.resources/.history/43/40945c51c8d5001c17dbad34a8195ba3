@@ -1,0 +1,13 @@
+package pkg1;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Student student = new Student();
+		System.out.println(student.rollNo);
+		System.out.println(student.name);
+		System.out.println(Student.collegeName);
+
+	}
+
+}

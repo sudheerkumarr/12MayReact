@@ -1,0 +1,14 @@
+package pkg2;
+
+import pkg1.Student;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Student std1 = new Student();
+		System.out.println(std1.rollNo);
+		
+
+	}
+
+}

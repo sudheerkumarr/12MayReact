@@ -53,7 +53,8 @@
  *   a27834 - valid
  *   wilma’s - Invalid
  *   
- * Data Types (8)
+ * Data Types (8) 
+ * primitive data types
  *  byte
  *  short
  *  int
@@ -62,6 +63,12 @@
  *  float
  *  char
  *  boolean
+ *  
+ *  non primitive data type
+ *  String
+ *  Array
+ *  
+ *  
  *  
  *  Default values
  *   byte - 0
@@ -73,6 +80,9 @@
  *   boolean - false
  *   char - '\u0000'
  *  
+ *  
+ *  access modifiers
+ *   public, private, default and protected
  */
 
 // - single line comment

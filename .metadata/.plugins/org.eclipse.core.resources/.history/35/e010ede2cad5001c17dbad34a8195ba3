@@ -1,0 +1,40 @@
+package pkg1;
+
+public class Employee {
+	
+	private int empId;
+	private String empName;
+	private String empRole;
+	
+	// Constructor
+	public Employee(int empId, String EmpName, String role) {
+		
+	}
+	
+	// Getters & Setters
+	public int getEmpId() {
+		return this.empId;
+	}
+
+	public void setEmpId(int eId) {
+		this.empId = eId;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+	public String getEmpRole() {
+		return empRole;
+	}
+
+	public void setEmpRole(String empRole) {
+		this.empRole = empRole;
+	}
+	
+	
+}

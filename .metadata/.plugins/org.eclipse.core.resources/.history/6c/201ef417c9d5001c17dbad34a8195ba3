@@ -1,0 +1,17 @@
+package pkg1;
+
+public class Employee {
+	
+	private int empId;
+	private String empName;
+	private String empRole;
+	
+	// Getters & Setters
+	int getEmpId() {
+		return this.empId;
+	}
+
+	void setEmpId(int eId) {
+		this.empId = eId;
+	}
+}

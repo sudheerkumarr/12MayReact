@@ -1,0 +1,9 @@
+package pkg1;
+
+private class Employee {
+	
+	private int empId;
+	private String empName;
+	private String empRole;
+
+}
