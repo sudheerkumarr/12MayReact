@@ -22,6 +22,14 @@ public class StringDemo {
 		System.out.println(str2); // Hello
 		
 		
+		System.out.println(str1.hashCode()); //69609650
+		System.out.println(str2.hashCode()); //69609650
+		
+		// equals - true/false - compares value
+		System.out.println(str1.equals(str2)); // true
+		System.out.println(str1==str2); // ref comparision - true
+		
+		System.out.println();
 		str1.concat(" World"); // 1 obj - Hello World
 		System.out.println(str1); // Hello
 		
@@ -35,6 +43,16 @@ public class StringDemo {
 		// Option 2 - using new keyword
 		String str3 = new String("Java"); // 1 obj - heap - Java
 		String str4 = new String("Java"); // 1 obj - heap - Java
+		
+		System.out.println();
+		System.out.println(str3.hashCode()); //2301506
+		System.out.println(str4.hashCode()); //2301506
+		
+		
+		// equals method
+		System.out.println();
+		System.out.println("equals method");
+		System.out.println(str3.equals(str4)); // true
 		
 		System.out.println(str3); // Java
 		System.out.println(str4); // Java
@@ -73,6 +91,8 @@ public class StringDemo {
 		
 		String newStr = String.join(" ", "Hello", "World");
 		System.out.println(newStr);
+		
+		
 		
 		
 		
