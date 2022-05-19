@@ -8,6 +8,7 @@ public class MultidimensionalArray {
 		//int[][] intArr = new int[][]{{10,20,30},{40, 50, 60},{70,80,90}};
 		int[][] intArr = {{10, 20, 30},{40, 50, 60},{70,80,90}};
 		
+		
 		// Read
 		System.out.println(intArr[1][1]); //50
 		System.out.println(intArr[2][2]); //90
@@ -61,6 +62,40 @@ public class MultidimensionalArray {
 			}
 			System.out.println();
 		}
+		
+		//String Array
+		//String[][] strArr = new String[3][4];
+		String[][] strArr = {{"aa", "bb", "cc", "dd"},{"dd", "ee", "ff"},{"gg", "hh", "ii"},{"gg", "hh", "ii"}};
+		System.out.println(strArr[1][2]); //ff
+		System.out.println(strArr.length);//3 - no of rows
+		System.out.println(strArr[0]);//{"aa", "bb", "cc"}
+		System.out.println(strArr[1]);//{"dd", "ee", "ff"}
+		System.err.println(strArr[2]); //{"gg", "hh", "ii"}
+		
+		System.out.println(strArr[0][0]);//aa
+		System.out.println(strArr[0][1]);//bb
+		System.out.println(strArr[0][2]);//cc
+		
+		System.out.println(strArr[1][0]);//dd
+		System.out.println(strArr[1][1]);//ee
+		System.out.println(strArr[1][2]);//ff
+		
+		System.out.println(strArr[2][0]);//gg
+		System.out.println(strArr[2][1]);//hh
+		System.out.println(strArr[2][2]);//ii
+		
+		System.out.println();
+		for(int i=0;i<strArr.length;i++) {// read rows - 3
+			for(int j=0; j<strArr[i].length;j++) {// read columns -3
+				System.out.print(strArr[i][j]+" "); //00, 01, 02, 
+			}
+			System.out.println();
+		}
+		
+		// remaining code 
+		
+		
+		
 	} ;//main
 
 }
