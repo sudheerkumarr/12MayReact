@@ -34,11 +34,27 @@ package day5;
 
 public class PolymorphismDemo {
 	
+	
+	{
+		System.out.println("Inside Non static block");
+	}
+	
+	static {
+		System.out.println("Inside static block");
+	}
+	
+	
 	public static void main(String[] args) {
+		
+		System.out.println("Inside main method");
+		
+		
 		
 		// Create object - no arg constructor
 		Person p1 = new Person();
 		Person p2 = new Person();
+		
+		
 		
 		// read values
 		System.out.println(p1.name);// null

@@ -27,6 +27,13 @@ public class Person {
 		this.age=age;
 	}
 	
+	// blocks
+	{
+		System.out.println("Inside Non static block");
+	}
+	
+	// methods
+	
 
 	int add(int x, int y) {
 		System.out.println("Inside int add method");
