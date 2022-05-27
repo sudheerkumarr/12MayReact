@@ -1,9 +1,0 @@
-package pkg1;
-
-class Student {
-	
-	int rollNo;
-	String name;
-	static String collegeName;
-
-}

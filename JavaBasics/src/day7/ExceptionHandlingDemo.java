@@ -182,11 +182,13 @@ public class ExceptionHandlingDemo {
 	     */
 		// try-catch
 		try {
+			
 			System.out.println(10/2);//ArithmeticException
 			System.out.println(Integer.parseInt("100")); // NumberFormatException
 			int[] i = new int[] {10,20,30};
 			System.out.println(i[4]);//ArrayIndexOutOfBoundsException
 		} catch(ArithmeticException | NumberFormatException | NullPointerException e) {
+		
 			e.printStackTrace();
 		} catch(Exception e) {
 			e.printStackTrace();

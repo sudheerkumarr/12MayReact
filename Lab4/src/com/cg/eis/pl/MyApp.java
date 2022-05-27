@@ -7,7 +7,7 @@ import com.cg.eis.service.EmployeeServiceImpl;
 
 public class MyApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] arg) {
 		Scanner sc = new Scanner(System.in);
 		EmployeeServiceImpl empService = new EmployeeServiceImpl();
 		System.out.println("Choose any one option below");
@@ -46,6 +46,7 @@ public class MyApp {
 
 			break;
 		case 2:
+			
 			break;
 		case 3:
 			break;

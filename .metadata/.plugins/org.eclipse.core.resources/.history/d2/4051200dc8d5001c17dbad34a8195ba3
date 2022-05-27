@@ -1,9 +1,0 @@
-package pkg1;
-
-public class Employee {
-	
-	int empId;
-	String empName;
-	empRole;
-
-}
