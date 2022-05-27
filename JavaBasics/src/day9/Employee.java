@@ -1,8 +1,9 @@
 package day9;
 
+
 import java.util.Objects;
 
-public class Employee {
+public class Employee{
 	int id;
 	String name;
 	String dept;
@@ -36,6 +37,7 @@ public class Employee {
 		Employee other = (Employee) obj;
 		return Objects.equals(dept, other.dept) && id == other.id && Objects.equals(name, other.name);
 	}
+	
 	
 
 	
