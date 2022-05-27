@@ -10,6 +10,8 @@ import day6.E;
 public class VectorDemo {
 
 	public static void main(String[] args) {
+		
+		
 		Vector v = new Vector();
 		v.addElement("Hello");
 		v.addElement(new Employee());
