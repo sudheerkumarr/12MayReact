@@ -3,6 +3,7 @@ package day10;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /*
  * Functional Interfaces
@@ -107,6 +108,11 @@ public class LambdaExpressionsDemo {
 		//public abstract T get();
 		Supplier s= ()-> "Hello World";
 		System.out.println(s.get()); // Hello World
+		
+		// Function
+		// public abstract R apply(T);
+		Function<Integer, Integer> i= (Integer x) -> x*x;
+		System.out.println(i.apply(100));
 			
 	
 	}
