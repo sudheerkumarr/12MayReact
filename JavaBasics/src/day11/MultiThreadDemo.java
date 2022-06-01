@@ -29,11 +29,23 @@ package day11;
  *  Name of main thread - main
  *  
  *  Lifecycles of a Thread
- *  New
+ *  New 
  *  Runnable
  *  Running
  *  Blocked/Waiting
- *  Terminated
+ *  Terminated/Dead
+ *  
+ *  New ->start()-> runnable
+ *      ->stop() -> Dead
+ *      
+ *  Runnable -> stop() -> Dead
+ *  Runnable -> run() -> Running
+ *  
+ *  Running -> end of execution -> Dead
+ *          -> sleep/suspend/wait - Blocked
+ *          -> stop -> Dead
+ *                    
+ *  Blocked -> notify/resume -> Runnable
  *  
  *  
  *  interface IntfA {
@@ -113,7 +125,7 @@ public class MultiThreadDemo {
 		System.out.println(Thread.currentThread().activeCount()); // 1
 		
 		// Step1 - crate obj of thread class
-		MyThread t1 = new MyThread();
+		MyThread t1 = new MyThread(); //New
 		MyThread t2 = new MyThread();
 		
 		
@@ -151,7 +163,8 @@ public class MultiThreadDemo {
 		
 		// Step 2 - start thread
 		t1.start(); // thread register with Thread Scheduler and calls run method
-		t2.start();
+		t2.start(); // Thread State - Runnable 
+		            // 
 		
 		System.out.println();
 		// get active number of threads
