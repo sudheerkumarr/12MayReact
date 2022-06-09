@@ -19,12 +19,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 
 	@Override
 	public Employee updateEmployee(int empId, Employee emp) {
-		// search emp based on id
-		
-		// update emp details
-		
-		// return updated emp
-		return null;
+		return empRepo.updateEmployee(empId, emp);
 	}
 
 	@Override
@@ -45,12 +40,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 
 	@Override
 	public Employee deleteEmployeeById(int empId) {
-		// search emp based on id
-		
-		// delete emp
-		
-		// return emp
-		return null;
+		return empRepo.deleteEmployeeById(empId);
 	}
 
 	@Override
@@ -67,18 +57,16 @@ public class EmployeeServiceImpl implements IEmployeeService{
 
 	@Override
 	public List<Employee> getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+		return empRepo.getAllEmployees();
 	}
 
 	@Override
 	public Employee getEmployeeById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return empRepo.getEmployeeById(id);
 	}
 
 	@Override
-	public Employee getEmployeeByName(String name) {
+	public List<Employee> getEmployeeByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}

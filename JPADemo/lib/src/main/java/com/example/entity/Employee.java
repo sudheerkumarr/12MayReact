@@ -37,6 +37,13 @@ public class Employee { // employee
 		this.salary = salary;
 	}
 
+	public Employee(int empId, String name, double salary) {
+		super();
+		this.empId = empId;
+		this.name = name;
+		this.salary = salary;
+	}
+
 	// Methods
 	public int getEmpId() {
 		return empId;

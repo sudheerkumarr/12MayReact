@@ -14,6 +14,6 @@ public interface IEmployeeRepository {
 	Employee deleteEmployee(Employee emp);
 	List<Employee> getAllEmployees();
 	Employee getEmployeeById(int id);
-	Employee getEmployeeByName(String name);
+	List<Employee> getEmployeeByName(String name);
 
 }
