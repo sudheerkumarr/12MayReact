@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.example.entity.Address;
 import com.example.entity.Employee;
+import com.example.entity.Login;
 import com.example.service.AddressServiceImpl;
 import com.example.service.EmployeeServiceImpl;
 import com.example.service.IAddressService;
@@ -34,6 +35,8 @@ public class MyApp {
 		System.out.println("8. Update employee salary");
 		System.out.println("9. Delete employee by name");
 		System.out.println("10. Add new address");
+		System.out.println("11. Employee Registration");
+		System.out.println("12. Login");
 		
 		// Read option entered by user
 		int selectedOption = sc.nextInt(); // NullPointerException
@@ -41,7 +44,7 @@ public class MyApp {
 		switch(selectedOption) {
 		case 1:
 			// Add employee
-			System.out.println("Enter name: ");
+			System.out.println("Enter Name: ");
 			String name = sc.next();
 			
 			System.out.println("Enter Salary");
@@ -122,6 +125,32 @@ public class MyApp {
 			
 			// print success message after adding addr in db
 			System.out.println(newAddr.getAddrId()+ " created successfully!");
+			break;
+		case 11:
+			//name, salary, email, password
+			System.out.println("Enter new name: ");
+			String newName3= sc.next();
+			
+			System.out.println("Enter new salary: ");
+			double sal3 = sc.nextDouble();
+			
+			System.out.println("Enter email: ");
+			String email3= sc.next();
+			
+			System.out.println("Enter password: ");
+			String password3= sc.next();
+			
+			Employee emp4 = new Employee();
+			emp4.setName(newName3);
+			emp4.setSalary(sal3);
+			
+			// create login object
+			Login login = new Login(email3, password3);
+			emp4.setLogin(login);
+			
+			Employee newEmp1 = empServ.addEmployee(emp4);
+			System.out.println(newEmp1.getName()+ " added successfully!");
+			
 			break;
 		default:
 			System.out.println("Invalid option. Enter any value between 1 and 6");

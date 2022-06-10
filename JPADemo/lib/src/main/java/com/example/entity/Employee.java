@@ -1,4 +1,5 @@
 package com.example.entity;
+import jakarta.persistence.CascadeType;
 /*
  * Relationships
  *  OneToOne
@@ -34,6 +35,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 // class declaration
@@ -54,6 +57,11 @@ public class Employee { // employee
 	
 	//private Address address;
 	//private Department dept;
+	
+	//@OneToOne(cascade= {CascadeType.REFRESH, CascadeType.PERSIST})
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="login")
+	private Login login;
 	
 	// Constructors
 	public Employee() {
@@ -93,6 +101,14 @@ public class Employee { // employee
 		this.salary = salary;
 	}
 	
+	public Login getLogin() {
+		return login;
+	}
+
+	public void setLogin(Login login) {
+		this.login = login;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + "]";
