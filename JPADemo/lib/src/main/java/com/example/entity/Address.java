@@ -1,15 +1,22 @@
 package com.example.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 // import statements
 
 
 // Class declaration
-public class Address {
+@Entity
+public class Address { // address - table created with this name
 	
 	// fields
-	private String city;
-	private String state;
+	@Id
+	@GeneratedValue
+	private int addrId; // addr_id
+	private String city; // city
+	private String state; // state
 	
 	// constructors
 	public Address() {}
@@ -36,6 +43,14 @@ public class Address {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+	
+	public int getAddrId() {
+		return addrId;
+	}
+
+	public void setAddrId(int addrId) {
+		this.addrId = addrId;
 	}
 
 	@Override

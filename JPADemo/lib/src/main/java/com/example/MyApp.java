@@ -4,8 +4,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import com.example.entity.Address;
 import com.example.entity.Employee;
+import com.example.service.AddressServiceImpl;
 import com.example.service.EmployeeServiceImpl;
+import com.example.service.IAddressService;
 import com.example.service.IEmployeeService;
 
 public class MyApp {
@@ -18,6 +21,7 @@ public class MyApp {
 		sc = new Scanner(System.in);
 		
 		IEmployeeService empServ = new EmployeeServiceImpl();
+		IAddressService addrServ = new AddressServiceImpl();
 		
 		System.out.println("Choose any one option from below: ");
 		System.out.println("1. Add Employee");
@@ -29,6 +33,7 @@ public class MyApp {
 		System.out.println("7. Update employee name");
 		System.out.println("8. Update employee salary");
 		System.out.println("9. Delete employee by name");
+		System.out.println("10. Add new address");
 		
 		// Read option entered by user
 		int selectedOption = sc.nextInt(); // NullPointerException
@@ -91,6 +96,32 @@ public class MyApp {
 			int empId1 = sc.nextInt();
 			Employee emp1 = empServ.getEmployeeById(empId1);
 			System.out.println(emp1);
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		case 8:
+			break;
+		case 9:
+			break;
+		case 10:
+			// get new addr details from user
+			System.out.println("Enter city name: ");
+			String city = sc.next();
+			System.out.println("Enter state: ");
+			String state = sc.next();
+			
+			// create addr object
+			Address addr = new Address();
+			addr.setCity(city);
+			addr.setState(state);
+			
+			// add addr in db
+			Address newAddr = addrServ.addAddress(addr);
+			
+			// print success message after adding addr in db
+			System.out.println(newAddr.getAddrId()+ " created successfully!");
 			break;
 		default:
 			System.out.println("Invalid option. Enter any value between 1 and 6");

@@ -1,5 +1,34 @@
 package com.example.entity;
-
+/*
+ * Relationships
+ *  OneToOne
+ *  OneToMany - ManyToOne
+ *  ManyToMany
+ *  
+ *  emp & addr - OneToMany
+ *  emp - OneToMany
+ *  addr- OneToOne
+ *  
+ *  person & ContactNo - OneToMany
+ *  per - OneToMany
+ *  Cont - OneToOne
+ *  
+ *  user & Profile - OneToOne
+ *  user - OneToOne
+ *  Profile - OneToOne
+ *  
+ *  book & Author - ManyToMany
+ *  book - OneToMany
+ *  Author - OneToMany
+ *  
+ *  emp & Skill - ManyToMany
+ *  emp - OneToMany
+ *  skill - OneToMany
+ *  
+ *  Unidirectional/Bidirectional
+ *  
+ *  
+ */
 import jakarta.persistence.Column;
 //import statements
 import jakarta.persistence.Entity;
