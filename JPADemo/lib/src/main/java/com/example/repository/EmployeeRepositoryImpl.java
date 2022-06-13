@@ -3,6 +3,7 @@ package com.example.repository;
 import java.util.List;
 
 import com.example.entity.Employee;
+import com.example.entity.Skill;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -169,6 +170,17 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
 
 	@Override
 	public Employee updateEmpAddr(Employee emp) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em= emf.createEntityManager();
+		em.getTransaction().begin();
+		// Update emp address details in db
+		em.merge(emp);
+		em.getTransaction().commit();
+		return emp;
+	}
+
+	@Override
+	public Employee updateEmpSkills(Employee emp) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 		EntityManager em= emf.createEntityManager();
 		em.getTransaction().begin();

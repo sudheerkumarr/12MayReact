@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.List;
 
 import com.example.entity.Employee;
+import com.example.entity.Skill;
 
 public interface IEmployeeService {
 
@@ -17,4 +18,5 @@ public interface IEmployeeService {
 	Employee getEmployeeById(int id);
 	List<Employee> getEmployeeByName(String name);
 	Employee updateEmpAddr(int empId14, int addrId14);
+	Employee updateEmpSkills(int empId, List<Skill> skills);
 }

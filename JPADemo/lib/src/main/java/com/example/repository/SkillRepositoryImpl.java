@@ -2,6 +2,7 @@ package com.example.repository;
 
 import java.util.List;
 
+import com.example.entity.Employee;
 import com.example.entity.Skill;
 
 import jakarta.persistence.EntityManager;
@@ -29,8 +30,17 @@ public class SkillRepositoryImpl implements ISkillRepository {
 
 	@Override
 	public Skill getSkillById(int skillId) {
-
-		return null;
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em= emf.createEntityManager();
+		
+		// Get emp by id
+		Skill skill= em.find(Skill.class, skillId);
+		
+		em.close();
+		emf.close();
+		
+		return skill;
+		
 	}
 
 }

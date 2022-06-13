@@ -3,6 +3,7 @@ package com.example.repository;
 import java.util.List;
 
 import com.example.entity.Employee;
+import com.example.entity.Skill;
 
 public interface IEmployeeRepository {
 	Employee addEmployee(Employee emp);
@@ -16,5 +17,5 @@ public interface IEmployeeRepository {
 	Employee getEmployeeById(int id);
 	List<Employee> getEmployeeByName(String name);
 	Employee updateEmpAddr(Employee emp);
-
+	Employee updateEmpSkills(Employee emp);
 }

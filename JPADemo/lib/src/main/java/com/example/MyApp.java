@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +15,10 @@ import com.example.service.IAddressService;
 import com.example.service.IEmployeeService;
 import com.example.service.ISkillService;
 import com.example.service.SkillServiceImpl;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class MyApp {
 
@@ -44,6 +49,7 @@ public class MyApp {
 		System.out.println("13. Add address");
 		System.out.println("14. Update Employee address");
 		System.out.println("15. Add new skill");
+		System.out.println("16. Update employee skills");
 		
 		// Read option entered by user
 		int selectedOption = sc.nextInt(); // NullPointerException
@@ -185,6 +191,30 @@ public class MyApp {
 			skill.setSkillName(skillName);
 			Skill newSkill = skillServ.addSkill(skill);
 			System.out.println(newSkill.getSkillName()+ " added successfully.");
+			break;
+		case 16:
+			// Get emp id
+			System.out.println("Enter existing employee id: ");
+			int empId16= sc.nextInt();
+			
+			// Get number of skills to be added to emp
+			System.out.println("Enter number of skills to be added: ");//2
+			int noOfSkills = sc.nextInt();
+			
+			// Get skills
+			//int[] skills = new int[noOfSkills];
+			List<Skill> skills = new ArrayList();
+			for(int i=0; i<noOfSkills; i++) { //
+				System.out.println("Enter skill id to be added"); //
+			    skills.add(skillServ.getSkillById(sc.nextInt()));
+				
+			}
+
+			// call service method to add skills with emp
+			Employee updatedEmp16= empServ.updateEmpSkills(empId16, skills);
+			
+			// print updated emp details
+			System.out.println(updatedEmp16);
 			break;
 		default:
 			System.out.println("Invalid option. Enter any value between 1 and 6");
