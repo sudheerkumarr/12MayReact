@@ -167,4 +167,15 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
 
 	}
 
+	@Override
+	public Employee updateEmpAddr(Employee emp) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em= emf.createEntityManager();
+		em.getTransaction().begin();
+		// Update emp address details in db
+		em.merge(emp);
+		em.getTransaction().commit();
+		return emp;
+	}
+
 }

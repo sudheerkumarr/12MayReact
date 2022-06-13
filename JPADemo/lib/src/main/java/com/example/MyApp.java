@@ -7,10 +7,13 @@ import java.util.Scanner;
 import com.example.entity.Address;
 import com.example.entity.Employee;
 import com.example.entity.Login;
+import com.example.entity.Skill;
 import com.example.service.AddressServiceImpl;
 import com.example.service.EmployeeServiceImpl;
 import com.example.service.IAddressService;
 import com.example.service.IEmployeeService;
+import com.example.service.ISkillService;
+import com.example.service.SkillServiceImpl;
 
 public class MyApp {
 
@@ -23,6 +26,7 @@ public class MyApp {
 		
 		IEmployeeService empServ = new EmployeeServiceImpl();
 		IAddressService addrServ = new AddressServiceImpl();
+		ISkillService skillServ = new SkillServiceImpl();
 		
 		System.out.println("Choose any one option from below: ");
 		System.out.println("1. Add Employee");
@@ -37,6 +41,9 @@ public class MyApp {
 		System.out.println("10. Add new address");
 		System.out.println("11. Employee Registration");
 		System.out.println("12. Login");
+		System.out.println("13. Add address");
+		System.out.println("14. Update Employee address");
+		System.out.println("15. Add new skill");
 		
 		// Read option entered by user
 		int selectedOption = sc.nextInt(); // NullPointerException
@@ -151,6 +158,33 @@ public class MyApp {
 			Employee newEmp1 = empServ.addEmployee(emp4);
 			System.out.println(newEmp1.getName()+ " added successfully!");
 			
+			break;
+		case 13:
+			System.out.println("Enter City name");
+			String city13= sc.next();
+			System.out.println("Enter State");
+			String state13 = sc.next();
+			
+			Address addr13 = new Address(city13, state13);
+			Address newAddr13= addrServ.addAddress(addr13);
+			System.out.println(newAddr13);
+			
+			break;
+		case 14:
+			System.out.println("Enter existing emp id");
+			int empId14= sc.nextInt();
+			System.out.println("Enter existing address id");
+			int addrId14= sc.nextInt();
+			Employee updatedEmp14= empServ.updateEmpAddr(empId14, addrId14);
+			System.out.println(updatedEmp14);
+			break;
+		case 15:
+			System.out.println("Enter Skill Name: ");
+			String skillName= sc.next();
+			Skill skill = new Skill();
+			skill.setSkillName(skillName);
+			Skill newSkill = skillServ.addSkill(skill);
+			System.out.println(newSkill.getSkillName()+ " added successfully.");
 			break;
 		default:
 			System.out.println("Invalid option. Enter any value between 1 and 6");

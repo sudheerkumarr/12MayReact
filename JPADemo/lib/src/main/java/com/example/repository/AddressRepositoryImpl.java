@@ -3,6 +3,7 @@ package com.example.repository;
 import java.util.List;
 
 import com.example.entity.Address;
+import com.example.entity.Employee;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -49,8 +50,17 @@ public class AddressRepositoryImpl implements IAddressRepository {
 
 	@Override
 	public Address getAddressById(int addrId) {
-
-		return null;
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em= emf.createEntityManager();
+		
+		// Get address by id
+		Address addr= em.find(Address.class, addrId);
+		
+		em.close();
+		emf.close();
+		
+		return addr;
+		
 	}
 
 	@Override

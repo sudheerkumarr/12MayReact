@@ -16,4 +16,5 @@ public interface IEmployeeService {
 	List<Employee> getAllEmployees();
 	Employee getEmployeeById(int id);
 	List<Employee> getEmployeeByName(String name);
+	Employee updateEmpAddr(int empId14, int addrId14);
 }

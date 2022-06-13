@@ -1,4 +1,6 @@
 package com.example.entity;
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 /*
  * Relationships
@@ -33,9 +35,13 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 //import statements
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -55,13 +61,25 @@ public class Employee { // employee
 	@Column(name="sal")
 	private double salary; // salary
 	
-	//private Address address;
+	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name="empId")
+	private List<Address> address;
 	//private Department dept;
 	
 	//@OneToOne(cascade= {CascadeType.REFRESH, CascadeType.PERSIST})
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="login")
 	private Login login;
+	
+	
+	// ManyToMany // 3 tables - emp, skill, emp-skill
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(
+        name = "employee_skills", 
+        joinColumns = { @JoinColumn(name = "emp_id") }, 
+        inverseJoinColumns = { @JoinColumn(name = "skill_id") }
+    )
+	private List<Skill> skill;
 	
 	// Constructors
 	public Employee() {
@@ -109,13 +127,26 @@ public class Employee { // employee
 		this.login = login;
 	}
 
+	public List<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+
+	public List<Skill> getSkill() {
+		return skill;
+	}
+
+	public void setSkill(List<Skill> skill) {
+		this.skill = skill;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + "]";
-	}
-	
-	
-	
-	
+		return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + ", address=" + address
+				+ ", login=" + login + "]";
+	} 
 
 }
