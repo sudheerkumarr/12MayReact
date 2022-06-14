@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="empBean1" class="SpringCoreDemo.Employee">
+		<constructor-arg name="empId" value="1001" type="int"></constructor-arg>
+		<constructor-arg name="name" value="Ram"></constructor-arg>
+	</bean>
+	<bean id="empBean2" class="SpringCoreDemo.Employee">
+		<constructor-arg index="0" value="1002" type="int"></constructor-arg>
+		<constructor-arg index="1" value="Sam"></constructor-arg>
+	</bean>
+	<bean id="empBean3" class="SpringCoreDemo.Employee">
+		<constructor-arg index="0" value="1003" type="int"></constructor-arg>
+		<constructor-arg index="1" value="Ravi"></constructor-arg>
+		<constructor-arg index="2" value="IT"></constructor-arg>
+	</bean>
+	<bean id="empBean4" class="SpringCoreDemo.Employee">
+		<constructor-arg index="0" value="1004" type="int"></constructor-arg>
+		<constructor-arg index="1" value="Sachin"></constructor-arg>
+		<constructor-arg index="2" value="Admin"></constructor-arg>
+		<constructor-arg index="3" ref="addrBean1"></constructor-arg>
+		
+	</bean>
+	
+	<bean id="addrBean1" class="SpringCoreDemo.Address">
+		<constructor-arg index="0" value="2001" type="int"></constructor-arg>
+		<constructor-arg index="1" value="Bengalure"></constructor-arg>
+		<constructor-arg index="2" value="Karnataka"></constructor-arg>
+	</bean>
+	<bean id="addrBean2" class="SpringCoreDemo.Address">
+		<constructor-arg name="addrId" value="2002" type="int"></constructor-arg>
+		<constructor-arg name="city" value="Chennai"></constructor-arg>
+		<constructor-arg name="state" value="Tamilnadu"></constructor-arg>
+	</bean>
+</beans>
