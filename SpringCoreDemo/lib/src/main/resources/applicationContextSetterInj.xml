@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  
-    xmlns="http://www.springframework.org/schema/beans"  
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-    xmlns:p="http://www.springframework.org/schema/p"  
-    xsi:schemaLocation="http://www.springframework.org/schema/beans  
-               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
-  
-	<bean id="empBean1" class="SpringCoreDemo.Employee">
-	    <property name="empId" value="1005"></property>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- scope="singleton" or scope="prototype" -->
+	<bean id="empBean1" class="SpringCoreDemo.Employee"
+		scope="singleton" init-method="initMethod"
+		destroy-method="destroyMethod">
+		<property name="empId" value="1005"></property>
 		<property name="name" value="Krish"></property>
-		
 		<property name="address" ref="addrBean1"></property>
 	</bean>
 	<bean id="addrBean1" class="SpringCoreDemo.Address">
-	    <property name="addrId" value="2005"></property>
-	    <property name="city" value="Hyderabad"></property>
-		<property name="state" value="Telangana"></property>  
+		<property name="addrId" value="2005"></property>
+		<property name="city" value="Hyderabad"></property>
+		<property name="state" value="Telangana"></property>
 	</bean>
 </beans>

@@ -3,6 +3,7 @@ package SpringCoreDemo;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -95,16 +96,54 @@ public class Test {
 		
 		// get bean
 		Employee emp6= (Employee)context1.getBean("empBean1");
+		Employee emp7= (Employee)context1.getBean("empBean1");
 		
 		System.out.println(emp6.getEmpId());
 		System.out.println(emp6.getName());
 		System.out.println(emp6.getDeptName());
 		System.out.println(emp6.getAddress());
 		
+		//scope- singleton
+//		System.out.println();
+//		System.out.println(emp6==emp7); //true
+//		System.out.println(emp6.hashCode()); //832347217
+//		System.out.println(emp7.hashCode()); //832347217
+		
+		//scope- prototype
+		System.out.println();
+		System.out.println(emp6==emp7); //false
+		
+		// Annotation based configuration example
+		System.out.println();
+		ApplicationContext context2 =   
+		   		new ClassPathXmlApplicationContext("applicationContextAnnotationConfig.xml");
+		
+		Student stud1 = context2.getBean("stud", Student.class);
+		System.out.println(stud1.getRollNo()); //0
+		System.out.println(stud1.getName()); // null
+		System.out.println(stud1.getAge()); // 0
+		
+		stud1.setRollNo(100);
+		stud1.setName("Sam");
+		stud1.setAge(20);
+		
+		System.out.println(stud1.getRollNo()); //100
+		System.out.println(stud1.getName()); // Sam
+		System.out.println(stud1.getAge()); // 20
+		
+		
+		System.out.println();
+		// Javabased config example
+		AnnotationConfigApplicationContext context3 =
+				new AnnotationConfigApplicationContext(CustomerConfig.class);
+		
+		Customer customer= (Customer)context3.getBean("customer", "Customer.class");
+		System.out.println(customer.getCustId());
+		System.out.println(customer.getName());
+		System.out.println(customer.getContactNo());
 		
 		
 		
-
 	}
 
 }

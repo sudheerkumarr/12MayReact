@@ -34,7 +34,12 @@ public class Employee {
 		this.deptName = deptName;
 	}
 	
-	
+	public void initMethod() {
+		System.out.println("Init method");
+	}
+	public void destroyMethod() {
+		System.out.println("Destroy method");
+	}
 	
 	
 	
