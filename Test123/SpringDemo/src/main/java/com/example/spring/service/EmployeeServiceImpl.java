@@ -1,11 +1,13 @@
 package com.example.spring.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 import com.example.spring.repository.IEmployeeRepository;
 
@@ -63,6 +65,38 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		}
 		// return emp
 		return emp.get();
+	}
+
+	@Override
+	public Employee updateEmployeeName(int empId, String newName) {
+		// find emp by id
+		Optional<Employee> emp= empRepo.findById(empId); // 2, Shiva
+		if(emp.isPresent()) {
+			// update name
+			Employee dbEmp = emp.get();
+			dbEmp.setEmpName(newName);
+			return empRepo.save(dbEmp);
+		} else {
+			// if emp not found in db, return null or throw exception
+			return null;
+		}
+		
+	}
+
+	@Override
+	public Employee updateEmpAddr(int empId, Address addr) {
+		// find emp
+		Optional<Employee> emp = empRepo.findById(empId);
+		if(emp.isPresent()) {
+			// update addr
+			Employee dbEmp = emp.get();
+			dbEmp.getAddress().add(addr);
+			System.out.println();
+			System.out.println(dbEmp);
+			return empRepo.save(dbEmp);
+		} else {
+			return null;
+		}
 	}
 
 }

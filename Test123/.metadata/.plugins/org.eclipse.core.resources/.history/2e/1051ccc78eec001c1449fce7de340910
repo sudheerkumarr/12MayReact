@@ -1,0 +1,13 @@
+package com.example.spring.entity;
+
+import javax.persistence.GeneratedValue;
+
+public class Address {
+	
+	@Id
+	@GeneratedValue
+	private int addrId;
+	private String city;
+	private String state;
+
+}

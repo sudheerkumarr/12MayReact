@@ -2,6 +2,7 @@ package com.example.spring.service;
 
 import java.util.List;
 
+import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 
 public interface IEmployeeService {
@@ -12,5 +13,7 @@ public interface IEmployeeService {
 	Employee addEmployee(Employee emp);
 	Employee updateEmployeeById(int empId, Employee emp);
 	Employee deleteEmployee(int empId);
+	Employee updateEmployeeName(int empId, String newName);
+	Employee updateEmpAddr(int empId, Address addr);
 
 }

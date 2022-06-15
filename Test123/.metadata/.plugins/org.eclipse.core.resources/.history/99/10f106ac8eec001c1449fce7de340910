@@ -1,0 +1,11 @@
+package com.example.spring.entity;
+
+public class Address {
+	
+	@Id
+	@GeneratedValue
+	private int addrId;
+	private String city;
+	private String state;
+
+}
