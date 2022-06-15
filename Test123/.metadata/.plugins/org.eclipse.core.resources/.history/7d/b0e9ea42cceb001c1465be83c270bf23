@@ -1,0 +1,17 @@
+package com.example.spring.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+	
+	//get all employees
+	List<Employee> getAllEmployees() {
+		
+		return ;
+	}
+	// get employee based on emp id
+	// add employee
+	// delete employee
+
+}

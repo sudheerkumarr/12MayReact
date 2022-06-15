@@ -1,0 +1,42 @@
+package com.example.spring.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.spring.entity.Employee;
+import com.example.spring.service.IEmployeeService;
+
+@RestController
+public class EmployeeController {
+	
+	// constructor injection/setter injection/field injection
+	@Autowired
+	IEmployeeService empServ;
+	
+	//get all employees
+	@GetMapping("/employees")
+	ResponseEntity<List<Employee>> getAllEmployees() {
+		List<Employee> employees = empServ.getAllEmployees();
+		return new ResponseEntity<>(employees, HttpStatus.OK);
+	}
+	
+	
+	// get employee based on emp id
+	//localhost:8080/employees/id
+	//localhost:8080/employees/234
+	@GetMapping("/employees/{id}")
+	ResponseEntity<Employee> getEmpById(@PathVariable("id") int empId) {
+		Employee emp= empServ.getEmpById(empId);
+		new ResponseEnt
+		return new 
+	}
+	// add employee
+	// delete employee
+
+}

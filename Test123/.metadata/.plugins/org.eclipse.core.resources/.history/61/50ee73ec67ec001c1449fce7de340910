@@ -1,0 +1,46 @@
+package com.example.spring.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.spring.entity.Employee;
+import com.example.spring.repository.IEmployeeRepository;
+
+@Service
+public class EmployeeServiceImpl implements IEmployeeService{
+
+	@Autowired
+	IEmployeeRepository empRepo;
+	
+	@Override
+	public List<Employee> getAllEmployees() {
+		
+		return empRepo.findAll();
+	}
+
+	@Override
+	public Employee getEmpById(int empId) {
+		Optional<Employee> emp= empRepo.findById(empId);
+		if(emp.isPresent()) {
+			return emp.get();
+		} else {
+			return null;
+		}
+		
+	}
+
+	@Override
+	public Employee addEmployee(Employee emp) {
+		return empRepo.save(emp);
+	}
+
+	@Override
+	public Employee updateEmployeeById(int empId) {
+		//Employee emp = empRepo.getById(empId);
+		return empRepo.save(emp);
+	}
+
+}

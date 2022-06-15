@@ -1,0 +1,8 @@
+package com.example.spring.service;
+
+public interface IEmployeeService {
+	
+	// get All employees
+	List<Employee> getAllEmployees()
+
+}

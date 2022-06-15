@@ -1,0 +1,21 @@
+package com.example.spring.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.spring.entity.Employee;
+import com.example.spring.repository.IEmployeeRepository;
+
+public class EmployeeServiceImpl implements IEmployeeService{
+
+	@Autowired
+	IEmployeeRepository empRepo;
+	
+	@Override
+	public List<Employee> getAllEmployees() {
+		
+		return null;
+	}
+
+}

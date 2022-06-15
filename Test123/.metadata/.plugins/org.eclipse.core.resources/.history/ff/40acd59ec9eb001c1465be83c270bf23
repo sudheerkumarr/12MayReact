@@ -1,0 +1,11 @@
+package com.example.spring.entity;
+
+@Entity
+@Data
+public class Employee {
+	
+	@Id
+	private int empId;
+	private String empName;
+
+}
