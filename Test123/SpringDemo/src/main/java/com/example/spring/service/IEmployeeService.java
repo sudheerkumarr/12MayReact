@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
+import com.example.spring.entity.Skill;
 
 public interface IEmployeeService {
 	
@@ -15,5 +16,6 @@ public interface IEmployeeService {
 	Employee deleteEmployee(int empId);
 	Employee updateEmployeeName(int empId, String newName);
 	Employee updateEmpAddr(int empId, Address addr);
+	Employee updateEmpSkill(int empId, Skill skill);
 
 }

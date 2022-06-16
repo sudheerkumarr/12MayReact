@@ -2,6 +2,8 @@ package com.example.spring.controller;
 
 import java.util.List;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
+import com.example.spring.entity.Skill;
 import com.example.spring.service.IEmployeeService;
 
 @RestController
@@ -73,6 +76,13 @@ public class EmployeeController {
 	@PatchMapping("/employee/addr/{id}")
 	ResponseEntity<Employee> updateEmpAddr(@PathVariable("id") int empId, @RequestBody Address newAddr) {
 		Employee emp= empServ.updateEmpAddr(empId, newAddr);
+		return new ResponseEntity<>(emp, HttpStatus.OK);
+	}
+	
+	// Update Employee skills 
+	@PatchMapping("/employee/skill/{id}")
+	ResponseEntity<Employee> updateEmpSkills(@PathVariable("id") int empId, @RequestBody Skill skill) {
+		Employee emp = empServ.updateEmpSkill(empId, skill);
 		return new ResponseEntity<>(emp, HttpStatus.OK);
 	}
 	

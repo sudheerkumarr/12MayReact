@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
+import com.example.spring.entity.Skill;
 import com.example.spring.repository.IEmployeeRepository;
 
 @Service
@@ -67,6 +68,8 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		return emp.get();
 	}
 
+	
+	// update emp name
 	@Override
 	public Employee updateEmployeeName(int empId, String newName) {
 		// find emp by id
@@ -83,16 +86,37 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		
 	}
 
+	
+	// Update emp address
 	@Override
-	public Employee updateEmpAddr(int empId, Address addr) {
+	public Employee updateEmpAddr(int empId, Address newAddr) {
 		// find emp
 		Optional<Employee> emp = empRepo.findById(empId);
 		if(emp.isPresent()) {
 			// update addr
+		    // get emp from optional container
 			Employee dbEmp = emp.get();
-			dbEmp.getAddress().add(addr);
+			
+			// add new addr to the existing emp
+			dbEmp.getAddress().add(newAddr);
 			System.out.println();
 			System.out.println(dbEmp);
+			
+			// update emp details in db
+			return empRepo.save(dbEmp);
+		} else {
+			return null;
+		}
+	}
+
+	// Update employee skills
+	@Override
+	public Employee updateEmpSkill(int empId, Skill skill) {
+		Optional<Employee> emp= empRepo.findById(empId);
+		if(emp.isPresent()) {
+			// update skills
+			Employee dbEmp = emp.get();
+			dbEmp.getSkills().add(skill);
 			return empRepo.save(dbEmp);
 		} else {
 			return null;

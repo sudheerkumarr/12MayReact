@@ -1,0 +1,6 @@
+package com.example.spring.service;
+
+@Service
+public class SkillServiceImpl implements ISkillService {
+
+}

@@ -1,12 +1,15 @@
 package com.example.spring.entity;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -17,19 +20,26 @@ import lombok.Data;
 @Entity
 @Data
 public class Employee {
-	
+
 	@Id
 	@GeneratedValue
 	private int empId;
 	private String empName;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="email")
+
+	// OneToOne unidirectional relationship 
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "email")
 	private Login login;
-	
-	@JsonIgnore
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="emp_addr_fk", referencedColumnName = "empId")
+
+	// OneToOne unidirectional relationship
+	// @JsonIgnore
+	@OneToMany(targetEntity = Address.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "emp_addr_fk", referencedColumnName = "empId")
 	private List<Address> address;
 
+	// ManyToMany unidirectional relationship
+	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
+	@JoinTable(name = "employees_skills", joinColumns = { @JoinColumn(name = "emp_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "skill_id") })
+	private Set<Skill> skills;
 }

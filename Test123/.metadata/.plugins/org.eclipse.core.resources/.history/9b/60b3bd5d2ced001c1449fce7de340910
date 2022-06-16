@@ -1,0 +1,16 @@
+package com.example.spring.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SkillController {
+	
+	@Autowired
+	ISkillService skillServ;
+	
+	// add skill in db
+	Skill addSkill(Skill skill) {
+		
+	}
+
+}

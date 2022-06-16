@@ -1,0 +1,12 @@
+package com.example.spring.entity;
+
+
+@Entity
+@Data
+public class Skill {
+
+	@Id
+	@GeneratedValue
+	private int skillId;
+	private String skillName;
+}

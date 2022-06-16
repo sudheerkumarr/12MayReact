@@ -1,0 +1,16 @@
+package com.example.spring.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.spring.entity.Skill;
+
+@Service
+public class SkillServiceImpl implements ISkillService {
+
+	@Override
+	public Skill addSkill(Skill skill) {
+		
+		return null;
+	}
+
+}

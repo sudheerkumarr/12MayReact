@@ -1,0 +1,102 @@
+package com.example.spring.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.spring.entity.Address;
+import com.example.spring.entity.Employee;
+import com.example.spring.repository.IEmployeeRepository;
+
+@Service
+public class EmployeeServiceImpl implements IEmployeeService{
+
+	@Autowired
+	IEmployeeRepository empRepo;
+	
+	@Override
+	public List<Employee> getAllEmployees() {
+		
+		return empRepo.findAll();
+	}
+
+	@Override
+	public Employee getEmpById(int empId) {
+		Optional<Employee> emp= empRepo.findById(empId);
+		if(emp.isPresent()) {
+			return emp.get();
+		} else {
+			return null;
+		}
+		
+	}
+
+	@Override
+	public Employee addEmployee(Employee emp) {
+		return empRepo.save(emp);
+	}
+
+	@Override
+	public Employee updateEmployeeById(int empId, Employee emp) {
+		// find emp based on id
+		Optional<Employee> dbEmp = empRepo.findById(empId);
+		
+		// if emp present, update emp with new details else return exception/null
+		if(dbEmp.isPresent()) {
+			return empRepo.save(emp);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public Employee deleteEmployee(int empId) {
+		// find emp based on emp id
+		Optional<Employee> emp = empRepo.findById(empId);
+		
+		// delete emp if present else return null or throw exception
+		if(emp.isPresent()) {
+			empRepo.deleteById(empId);
+		} else {
+			return null;
+		}
+		// return emp
+		return emp.get();
+	}
+
+	@Override
+	public Employee updateEmployeeName(int empId, String newName) {
+		// find emp by id
+		Optional<Employee> emp= empRepo.findById(empId); // 2, Shiva
+		if(emp.isPresent()) {
+			// update name
+			Employee dbEmp = emp.get();
+			dbEmp.setEmpName(newName);
+			return empRepo.save(dbEmp);
+		} else {
+			// if emp not found in db, return null or throw exception
+			return null;
+		}
+		
+	}
+
+	@Override
+	public Employee updateEmpAddr(int empId, Address addr) {
+		// find emp
+		Optional<Employee> emp = empRepo.findById(empId);
+		if(emp.isPresent()) {
+			// update addr
+			Employee dbEmp = emp.get();
+			dbEmp.getAddress().add(addr);
+			System.out.println();
+			System.out.println(dbEmp);
+			return empRepo.save(dbEmp);
+		} else {
+			return null;
+		}
+	}
+
+}
