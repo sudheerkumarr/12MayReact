@@ -3,6 +3,7 @@ package com.example.spring.controller;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,7 +48,7 @@ public class EmployeeController {
 	}
 	// add employee
 	@PostMapping("/employee")
-	ResponseEntity<Employee> addEmployee(@RequestBody Employee emp) {
+	ResponseEntity<Employee> addEmployee(@Valid @RequestBody Employee emp) {
 		Employee newEmp = empServ.addEmployee(emp);
 		return new ResponseEntity<>(newEmp, HttpStatus.CREATED);
 	}
