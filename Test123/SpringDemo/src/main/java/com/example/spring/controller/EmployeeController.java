@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 import com.example.spring.entity.Skill;
+import com.example.spring.exception.EmployeeNotFoundException;
 import com.example.spring.service.IEmployeeService;
 
 @RestController
@@ -39,8 +40,8 @@ public class EmployeeController {
 	// get employee based on emp id
 	//localhost:8080/employees/id
 	//localhost:8080/employees/234
-	@GetMapping("/employees/{id}")
-	ResponseEntity<Employee> getEmpById(@PathVariable("id") int empId) {
+	@GetMapping("/employee/{id}")
+	ResponseEntity<Employee> getEmpById(@PathVariable("id") int empId) throws EmployeeNotFoundException {
 		Employee emp= empServ.getEmpById(empId);
 		return new ResponseEntity<>(emp, HttpStatus.OK);
 	}
@@ -53,7 +54,7 @@ public class EmployeeController {
 	
 	// Update Employee
 	@PutMapping("/employee/{id}")
-	ResponseEntity<Employee> updateEmployeeById(@RequestBody Employee emp, @PathVariable("id") int empId) {
+	ResponseEntity<Employee> updateEmployeeById(@RequestBody Employee emp, @PathVariable("id") int empId) throws EmployeeNotFoundException {
 		Employee updatedEmp = empServ.updateEmployeeById(empId, emp);
 		return new ResponseEntity<>(updatedEmp, HttpStatus.OK);
 	}

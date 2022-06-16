@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 import com.example.spring.entity.Skill;
+import com.example.spring.exception.EmployeeNotFoundException;
 import com.example.spring.repository.IEmployeeRepository;
 
 @Service
@@ -25,12 +26,12 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 
 	@Override
-	public Employee getEmpById(int empId) {
+	public Employee getEmpById(int empId) throws EmployeeNotFoundException {
 		Optional<Employee> emp= empRepo.findById(empId);
 		if(emp.isPresent()) {
 			return emp.get();
 		} else {
-			return null;
+			throw new EmployeeNotFoundException("Employee not found with emp id "+empId);
 		}
 		
 	}
@@ -41,7 +42,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 
 	@Override
-	public Employee updateEmployeeById(int empId, Employee emp) {
+	public Employee updateEmployeeById(int empId, Employee emp) throws EmployeeNotFoundException {
 		// find emp based on id
 		Optional<Employee> dbEmp = empRepo.findById(empId);
 		
@@ -49,7 +50,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		if(dbEmp.isPresent()) {
 			return empRepo.save(emp);
 		} else {
-			return null;
+			throw new EmployeeNotFoundException("Employee not found with emp id "+empId);
 		}
 	}
 
