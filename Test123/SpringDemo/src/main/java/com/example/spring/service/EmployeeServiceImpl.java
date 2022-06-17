@@ -151,7 +151,13 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	// Get address by emp id
 	@Override
 	public AddressDto getAddrByEmpId(int empId) {
-		System.out.println((AddressDto)empRepo.getAddressByEmpId(empId));
+		
+		return null;
+	}
+
+	@Override
+	public List<Skill> getEmpSkills() {
+		// logic to fetch emp skill
 		return null;
 	}
 

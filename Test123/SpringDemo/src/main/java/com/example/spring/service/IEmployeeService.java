@@ -25,5 +25,6 @@ public interface IEmployeeService {
 	List<Employee> getEmpBySalaryGreaterThan(double salary);
 	List<Employee> getEmpByDob(LocalDate dob);
 	AddressDto getAddrByEmpId(int empId);
+	List<Skill> getEmpSkills();
 
 }
