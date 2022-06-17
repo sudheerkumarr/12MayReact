@@ -1,5 +1,6 @@
 package com.example.spring.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.spring.dto.AddressDto;
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 import com.example.spring.entity.Skill;
@@ -122,6 +124,35 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		} else {
 			return null;
 		}
+	}
+
+	@Override
+	public List<Employee> getEmpByName(String empName) {
+		
+		return empRepo.findByEmpName(empName);
+	}
+
+	@Override
+	public List<Employee> getEmpBySalary(double salary) {
+		return empRepo.findBySalary(salary);
+	}
+
+	@Override
+	public List<Employee> getEmpBySalaryGreaterThan(double salary) {
+		return empRepo.findBySalaryGreaterThan(salary);
+	}
+
+	@Override
+	public List<Employee> getEmpByDob(LocalDate dob) {
+		return empRepo.findByDob(dob);
+	}
+
+	
+	// Get address by emp id
+	@Override
+	public AddressDto getAddrByEmpId(int empId) {
+		System.out.println((AddressDto)empRepo.getAddressByEmpId(empId));
+		return null;
 	}
 
 }

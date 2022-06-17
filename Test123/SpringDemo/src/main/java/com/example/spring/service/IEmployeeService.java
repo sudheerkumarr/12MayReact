@@ -1,7 +1,9 @@
 package com.example.spring.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
+import com.example.spring.dto.AddressDto;
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 import com.example.spring.entity.Skill;
@@ -18,5 +20,10 @@ public interface IEmployeeService {
 	Employee updateEmployeeName(int empId, String newName);
 	Employee updateEmpAddr(int empId, Address addr);
 	Employee updateEmpSkill(int empId, Skill skill);
+	List<Employee> getEmpByName(String empName);
+	List<Employee> getEmpBySalary(double salary);
+	List<Employee> getEmpBySalaryGreaterThan(double salary);
+	List<Employee> getEmpByDob(LocalDate dob);
+	AddressDto getAddrByEmpId(int empId);
 
 }
