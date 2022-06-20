@@ -9,11 +9,14 @@ import lombok.Data;
 @Entity
 @Data
 public class Address {
+
 	
+	// Fields
 	@Id
 	@GeneratedValue
 	private int addrId;
 	private String city;
 	private String state;
+
 
 }

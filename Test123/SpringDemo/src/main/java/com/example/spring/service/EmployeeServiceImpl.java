@@ -1,7 +1,6 @@
 package com.example.spring.service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -103,7 +102,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 			// add new addr to the existing emp
 			dbEmp.getAddress().add(newAddr);
 			System.out.println();
-			System.out.println(dbEmp);
+			
 			
 			// update emp details in db
 			return empRepo.save(dbEmp);

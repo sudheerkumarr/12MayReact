@@ -18,7 +18,6 @@ public class EmployeeExceptionHandler {
 		
 		error.setStatus(HttpStatus.NOT_FOUND.value()); // 404 not found
 		error.setMessage(exception.getMessage()); //get message from exception
-		//error.setTimeStamp(System.currentTimeMillis());
 		error.setTimeStamp(LocalDateTime.now()); // system time
 		
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);  //404 Not found
@@ -30,7 +29,6 @@ public class EmployeeExceptionHandler {
 		
 		error.setStatus(HttpStatus.UNAUTHORIZED.value()); // 401 unauthorized
 		error.setMessage(exception.getMessage()); //get message from exception
-		//error.setTimeStamp(System.currentTimeMillis());
 		error.setTimeStamp(LocalDateTime.now()); // system time
 		
 		return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);  //404 Not found

@@ -22,7 +22,7 @@ public class EmployeeServiceTest {
 	//TDD- Test Driven Development 
 	// add emp
 	@Test
-	//@Disabled
+	@Disabled
 	@Tag("skip")
 	void testAddEmp() {
 		Employee emp = new Employee();
@@ -30,7 +30,7 @@ public class EmployeeServiceTest {
 		emp.setEmpName("Atul");
 		
 		Login login = new Login();
-		login.setEmail("atul_1@gmail.com");
+		login.setEmail("atul_2@gmail.com");
 		login.setPassword("abc@1234");
 		emp.setLogin(login);
 		
@@ -48,7 +48,7 @@ public class EmployeeServiceTest {
 	}
 	// delete emp
 	@Test
-	//@Disabled
+	@Disabled
 	@Tag("skip")
 	void testDeleteEmp() {
 		Employee emp = empServ.deleteEmployee(60);
@@ -60,9 +60,10 @@ public class EmployeeServiceTest {
 	// get emp addr
 	// get all employees
 	@Test
+	
 	void testGetAllEmployees() {
 		List<Employee> employees = empServ.getAllEmployees();
-		assertEquals(2, employees.size());
+		assertEquals(3, employees.size());
 		Employee emp = employees.get(0);
 		assertEquals("Geetha", emp.getEmpName());
 	}
