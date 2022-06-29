@@ -14,4 +14,6 @@ public class Skill {
 	@GeneratedValue
 	private int skillId;
 	private String skillName;
+	
+	
 }

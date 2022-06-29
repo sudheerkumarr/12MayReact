@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,18 +23,25 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	@Autowired
 	IEmployeeRepository empRepo;
 	
+	private static Logger logger = LogManager.getLogger();
+	
 	@Override
 	public List<Employee> getAllEmployees() {
-		
+		logger.debug("Calling empRepo findAll() method");
 		return empRepo.findAll();
 	}
 
 	@Override
 	public Employee getEmpById(int empId) throws EmployeeNotFoundException {
+		logger.info("Sending get request to repository...");
 		Optional<Employee> emp= empRepo.findById(empId);
+		
 		if(emp.isPresent()) {
+			logger.info("Received emp from db");
+			logger.info("Returning emp to controller");
 			return emp.get();
 		} else {
+			logger.info("Failed to get emp from db");
 			throw new EmployeeNotFoundException("Employee not found with emp id "+empId);
 		}
 		
@@ -147,17 +157,26 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 
 	
-	// Get address by emp id
-	@Override
-	public AddressDto getAddrByEmpId(int empId) {
-		
-		return null;
-	}
+	
 
 	@Override
 	public List<Skill> getEmpSkills() {
 		// logic to fetch emp skill
 		return null;
+	}
+
+	@Override
+	public Employee updateEmpDob(int empId, LocalDate date) throws EmployeeNotFoundException {
+		Optional<Employee> emp= empRepo.findById(empId);
+		if(emp.isPresent()) {
+			// update date of birth
+			Employee dbEmp = emp.get();
+			dbEmp.setDob(date);
+			return empRepo.save(dbEmp);
+		} else {
+			throw new EmployeeNotFoundException("Employee not found with id: "+empId);
+		}
+
 	}
 
 }

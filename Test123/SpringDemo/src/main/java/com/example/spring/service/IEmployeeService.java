@@ -24,7 +24,7 @@ public interface IEmployeeService {
 	List<Employee> getEmpBySalary(double salary);
 	List<Employee> getEmpBySalaryGreaterThan(double salary);
 	List<Employee> getEmpByDob(LocalDate dob);
-	AddressDto getAddrByEmpId(int empId);
 	List<Skill> getEmpSkills();
+	Employee updateEmpDob(int empId, LocalDate date) throws EmployeeNotFoundException;
 
 }

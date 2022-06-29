@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.spring.dto.AddressDto;
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 import com.example.spring.entity.Skill;
@@ -50,6 +49,9 @@ public class EmployeeController {
 	// add employee
 	@PostMapping("/employee")
 	ResponseEntity<Employee> addEmployee(@Valid @RequestBody Employee emp) {
+		System.out.println();
+		System.out.println(emp.getDob());
+		//LocalDate.of(0, 0, 0).getDob()
 		Employee newEmp = empServ.addEmployee(emp);
 		return new ResponseEntity<>(newEmp, HttpStatus.CREATED);
 	}
@@ -117,12 +119,9 @@ public class EmployeeController {
 		List<Employee> employees = empServ.getEmpByDob(dob);
 		return new ResponseEntity<>(employees, HttpStatus.OK);
 	}
-	
-	// Get address based on emp id
-	@GetMapping("/employee/addr/{empId}")
-	ResponseEntity<AddressDto> getAddressByEmpId(@PathVariable("empId") int empId) {
-		AddressDto addr= empServ.getAddrByEmpId(empId);
-		return new ResponseEntity<>(addr, HttpStatus.OK);
+	@PatchMapping("/employee/update/dob/{empId}")
+	ResponseEntity<Employee> getEmpDob(@PathVariable int empId, @RequestBody LocalDate date) throws EmployeeNotFoundException {
+		Employee emp = empServ.updateEmpDob(empId, date);
+		return new ResponseEntity<>(emp, HttpStatus.OK);
 	}
-
 }

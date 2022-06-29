@@ -1,0 +1,86 @@
+[INFO ] 2022-06-29 16:09:22.398 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 608 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:09:22.421 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:09:22.423 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:09:40.290 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 19.679 seconds (JVM running for 24.139)
+[DEBUG] 2022-06-29 16:10:18.144 [http-nio-8080-exec-1] EmployeeServiceImpl - Calling empRepo findAll() method
+[INFO ] 2022-06-29 16:15:41.885 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 608 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:15:41.886 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:15:41.887 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:15:44.861 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 3.059 seconds (JVM running for 388.709)
+[INFO ] 2022-06-29 16:16:19.468 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 608 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:16:19.469 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:16:19.469 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:16:22.286 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 2.889 seconds (JVM running for 426.135)
+[INFO ] 2022-06-29 16:16:44.107 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 608 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:16:44.109 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:16:44.109 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:16:46.704 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 2.683 seconds (JVM running for 450.553)
+[INFO ] 2022-06-29 16:16:58.456 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 608 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:16:58.457 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:16:58.457 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:17:01.058 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 2.661 seconds (JVM running for 464.907)
+[INFO ] 2022-06-29 16:17:02.675 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 608 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:17:02.676 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:17:02.676 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:17:05.296 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 2.714 seconds (JVM running for 469.144)
+[INFO ] 2022-06-29 16:17:32.961 [http-nio-8080-exec-1] EmployeeServiceImpl - Sending get request to repository...
+[INFO ] 2022-06-29 16:17:33.037 [http-nio-8080-exec-1] EmployeeServiceImpl - Received emp from db
+[INFO ] 2022-06-29 16:18:48.391 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 608 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:18:48.392 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:18:48.393 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:18:50.944 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 2.65 seconds (JVM running for 574.792)
+[INFO ] 2022-06-29 16:28:12.324 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 4948 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:28:12.333 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:28:12.335 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:28:15.482 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 3.277 seconds (JVM running for 137.438)
+[INFO ] 2022-06-29 16:28:24.322 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 4948 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:28:24.323 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:28:24.323 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:28:31.063 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13424 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:28:31.068 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:28:31.070 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:28:41.338 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 10.886 seconds (JVM running for 13.432)
+[INFO ] 2022-06-29 16:29:01.795 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13884 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:29:01.808 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:29:01.810 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:29:13.530 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 12.452 seconds (JVM running for 15.065)
+[INFO ] 2022-06-29 16:29:30.737 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13884 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:29:30.739 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:29:30.740 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:29:36.905 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 6.595 seconds (JVM running for 38.439)
+[INFO ] 2022-06-29 16:29:38.734 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13884 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:29:38.735 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:29:38.736 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:29:45.704 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 7.063 seconds (JVM running for 47.238)
+[INFO ] 2022-06-29 16:30:10.060 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13884 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:30:10.061 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:30:10.061 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:30:15.156 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 5.315 seconds (JVM running for 76.69)
+[INFO ] 2022-06-29 16:38:52.544 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13884 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:38:52.545 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:38:52.552 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:38:55.745 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 3.399 seconds (JVM running for 597.279)
+[INFO ] 2022-06-29 16:41:42.328 [http-nio-8080-exec-1] EmployeeServiceImpl - Sending get request to repository...
+[INFO ] 2022-06-29 16:41:42.459 [http-nio-8080-exec-1] EmployeeServiceImpl - Received emp from db
+[INFO ] 2022-06-29 16:41:42.459 [http-nio-8080-exec-1] EmployeeServiceImpl - Returning emp to controller
+[DEBUG] 2022-06-29 16:43:49.054 [http-nio-8080-exec-3] EmployeeServiceImpl - Calling empRepo findAll() method
+[INFO ] 2022-06-29 16:50:30.523 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13884 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:50:30.524 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:50:30.525 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:50:36.632 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 6.352 seconds (JVM running for 1298.166)
+[INFO ] 2022-06-29 16:51:02.414 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13212 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:51:02.418 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:51:02.419 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:51:14.127 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 12.332 seconds (JVM running for 14.994)
+[INFO ] 2022-06-29 16:51:37.331 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 12516 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:51:37.344 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:51:37.345 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:51:47.058 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 10.317 seconds (JVM running for 13.015)
+[INFO ] 2022-06-29 16:52:05.925 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 13140 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:52:05.933 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:52:05.935 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:52:15.959 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 10.636 seconds (JVM running for 13.208)
+[INFO ] 2022-06-29 16:52:40.196 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 12928 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-06-29 16:52:40.211 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-06-29 16:52:40.213 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-06-29 16:52:49.436 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 9.895 seconds (JVM running for 12.436)

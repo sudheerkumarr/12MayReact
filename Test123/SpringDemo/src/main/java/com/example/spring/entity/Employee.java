@@ -1,10 +1,12 @@
 package com.example.spring.entity;
 
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,8 +23,8 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 import lombok.Data;
 
@@ -44,10 +46,12 @@ public class Employee {
 	private LocalDate dob;
 	
 	@URL(message="Enter valid url")
+	@Column(length=50)
 	//"url": "https://www.google.com"
 	private String url;
 	
 	@DecimalMax(value="100000", message="Salary shouldn't be greater than 100000")
+	@Column(length=20)
 	private double salary;
 
 	// OneToOne unidirectional relationship 
