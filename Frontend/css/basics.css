@@ -1,0 +1,83 @@
+/* Universal selector */
+* {
+    padding: 0;
+    margin: 0;
+}
+/* Tag selectors */
+body {
+    background-color: seashell;
+}
+p {
+    color:blue;
+}
+/* ID Selector */
+#header1 {
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:red
+}
+#header2 {
+    color:gold
+}
+/* class selector */
+.headers {
+    color:green
+}
+
+/* group selectors */
+code, pre {
+    font-size: 24px;
+    margin: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding:20px;
+}
+input, label {
+    margin:10px;
+    padding:5px
+}
+
+#header1, #header2 {
+    text-transform: capitalize;
+}
+
+/* apply color all list items present in ol with id firstol */
+ol#firstol>li {
+    color:fuchsia
+}
+/* Attribute Selector */
+ol[type="A"] {
+    color:yellowgreen;
+}
+ol[type="I"]>li#firstli {
+    color:red;
+}
+
+/*sibling after li with id firstli */
+li#firstli+li {
+    color: rgb(100,100,100);
+}
+
+/*all sibling's after li with id one */
+li#one ~ li {
+    color: #995544;
+}
+/* nav>ul>li {
+    display: inline;
+} */
+
+nav>ul {
+    display: flex;
+    list-style-type:none;
+    flex-direction: row;
+    justify-content:space-around;
+    border: 1px solid red;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+a {
+    text-decoration: none;
+}

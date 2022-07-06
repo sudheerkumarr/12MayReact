@@ -5,23 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="../css/basics.css" rel="stylesheet" type="text/css">
     <style>
         table,th,td {
             border: 2px solid red; 
             border-collapse:collapse;
         }
+        p {
+            color:yellow
+        }
+
     </style>
   </head>
   <body>
     <a id="address1"></a>
-    <h1>h1 header</h1>
-    <h2>h2 header</h2>
-    <h3>h3 header</h3>
-    <h4>h4 header</h4>
-    <h5>h5 header</h5>
+    <h1 id="header1">h1 header</h1>
+    <h2 id="header2">h2 header</h2>
+    <h3 class="headers">h3 header</h3>
+    <h4 class="headers">h4 header</h4>
+    <h5 class="headers">h5 header</h5>
     <h6>h6 header</h6>
     <article style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
-    <p>
+    <p style="color:brown">
       <span style="font-size:24px; font-weight: bold;color: red;  ">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
@@ -185,7 +190,7 @@
         </table>
         <hr/>
         <!--Ordered List-->
-        <ol>
+        <ol id="firstol">
             <li>India</li>
             <li>Australia</li>
             <li>USA</li>
@@ -198,9 +203,9 @@
         </ol>
         <!--Uppercase Roman letters-->
         <ol type="I">
-            <li>India</li>
-            <li>Australia</li>
-            <li>USA</li>
+            <li id="firstli">India</li>
+            <li id="secondli">Australia</li>
+            <li id="thirdli">USA</li>
         </ol>
         <!--lower case alphabets start from 'c'-->
         <ol type="a" start="3">
@@ -208,12 +213,12 @@
             <li>Australia</li>
             <li>USA</li>
         </ol>
-
+<br/>
         <!--Unordered List-->
         <ul style="list-style-type: disc">
-            <li>India</li>
-            <li>Australia</li>
-            <li>USA</li>
+            <li id="one">India</li>
+            <li id="two">Australia</li>
+            <li id="three">USA</li>
         </ul>
         <ul style="list-style-type: square">
             <li>India</li>
