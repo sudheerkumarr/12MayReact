@@ -5,37 +5,37 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <form class="w-25 mx-auto border border-secondary rounded mt-4 p-2 shadow-lg p-3 mb-5 bg-body rounded">
-          <p class="text-center fs-4 bg-secondary text-white">Login Form</p>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">
+        <form className="w-25 mx-auto border border-secondary rounded mt-4 p-2 shadow-lg p-3 mb-5 bg-body rounded">
+          <p className="text-center fs-4 bg-secondary text-white">Login Form</p>
+          <div className="mb-3">
+            <label for="exampleInputEmail1" className="form-label">
               Email address
             </label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">
+          <div className="mb-3">
+            <label for="exampleInputPassword1" className="form-label">
               Password
             </label>
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               id="exampleInputPassword1"
             />
           </div>
-          <select class="form-select" aria-label="Default select example">
+          <select className="form-select" aria-label="Default select example">
             <option selected>Role</option>
             <option value="1">Employee</option>
             <option value="2">Admin</option>
             <option value="3">Customer</option>
           </select>
-          <div class="d-grid gap-2 mt-3">
-            <button type="submit" class="btn btn-secondary">
+          <div className="d-grid gap-2 mt-3">
+            <button type="submit" className="btn btn-secondary">
               Submit
             </button>
           </div>
