@@ -43,10 +43,10 @@ const UpdateEmployee = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`http://localhost:8080/employee/${params.id}`, emp)
+      .put(`http://localhost:8080/employee/dto/${params.id}`, emp)
       .then((res) => {
         console.log(res);
-        alert("Added new employee " + res.data.empName + " successfully!");
+        alert("Updated employee " + res.data.empName + " successfully!");
       })
       .catch((error) => console.log(error));
   };
