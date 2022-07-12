@@ -1,70 +1,60 @@
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import React, { Component } from "react";
 
-class UpdateEmployee extends Component {
-  state = {
-    employee: {
-      empId: "",
-      empName: "",
-      dob: "",
-      salary: "",
-      email: "",
-      password: "",
-    },
-  };
+const UpdateEmployee = () => {
+  const params = useParams();
+  console.log(params);
 
-  componentDidMount() {
-    //axios.get('url')
+  // define state
+  const [emp, setEmp] = useState({
+    empId: "",
+    empName: "",
+    salary: "",
+    dob: "",
+    email: "",
+  });
+
+  //useEffect(callback function,[condition] )
+  // get existing emp details using id and update emp state obj
+  useEffect(() => {
     axios
-      .get("http://localhost:8080/employee/83")
-      .then((res) => {
-        console.log(res.data);
-        const newEmp = {
-          empId: res.data.empId,
-          empName: res.data.empName,
-          dob: res.data.dob,
-          salary: res.data.salary,
-          email: res.data.login.email,
-          password: res.data.login.password,
-        };
-        this.setState({ employee: newEmp });
-      })
+      .get(`http://localhost:8080/employee/dto/${params.id}`)
+      .then((res) => setEmp(res.data))
       .catch((err) => console.log(err));
-  }
-  handleChange = (event) => {
-    const newEmp = { ...this.state.employee };
+  }, []);
+
+  const handleChange = (event) => {
+    console.log(event.target.name); // returns field name
+    console.log(event.target.value); // retruns filed value
+
+    // copy emp details to newEmp obj
+    const newEmp = { ...emp };
+
+    //newEmp.empId =10;
+    //newEmp["empId"] = 10;
+    //update newEmp object
     newEmp[event.target.name] = event.target.value;
-    this.setState({ employee: newEmp });
+
+    // update emp obj with newEmp obj details
+    setEmp(newEmp);
   };
-  handleSubmit = (event) => {
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    //axios.put(url, obj)
-    const newEmp = {
-      empId: this.state.employee.empId,
-      empName: this.state.employee.empName,
-      dob: this.state.employee.dob,
-      salary: this.state.employee.salary,
-      login: {
-        email: this.state.employee.email,
-        password: this.state.employee.password,
-      },
-    };
     axios
-      .put("http://localhost:8080/employee/83", newEmp)
+      .put(`http://localhost:8080/employee/${params.id}`, emp)
       .then((res) => {
-        console.log(res.date);
-        alert(
-          "Updated employee " + this.state.employee.empName + "successfully!"
-        );
+        console.log(res);
+        alert("Added new employee " + res.data.empName + " successfully!");
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.log(error));
   };
-  render() {
-    console.log(this.state.employee);
-    return (
+  return (
+    <div>
       <div className="w-50 mx-auto mt-3">
         <p className="display-6">Update Employee</p>
-        <form className="border p-3" onSubmit={this.handleSubmit}>
+        <form className="border p-3" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="empName" className="form-label float-start">
               Employee Id
@@ -73,9 +63,9 @@ class UpdateEmployee extends Component {
               type="text"
               className="form-control"
               id="empId"
-              value={this.state.employee.empId}
+              value={emp.empId}
               name="empId"
-              onChange={this.handleChange}
+              onChange={handleChange}
               disabled
             />
           </div>
@@ -87,9 +77,9 @@ class UpdateEmployee extends Component {
               type="text"
               className="form-control"
               id="empName"
-              value={this.state.employee.empName}
+              value={emp.empName}
               name="empName"
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-3">
@@ -100,9 +90,9 @@ class UpdateEmployee extends Component {
               type="number"
               className="form-control"
               id="salary"
-              value={this.state.employee.salary}
+              value={emp.salary}
               name="salary"
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-3">
@@ -114,8 +104,8 @@ class UpdateEmployee extends Component {
               className="form-control"
               id="dob"
               name="dob"
-              value={this.state.employee.dob}
-              onChange={this.handleChange}
+              value={emp.dob}
+              onChange={handleChange}
             />
           </div>
 
@@ -128,24 +118,12 @@ class UpdateEmployee extends Component {
               className="form-control"
               id="email"
               aria-describedby="emailHelp"
-              value={this.state.employee.email}
+              value={emp.email}
               name="email"
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
           </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label float-start">
-              Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              value={this.state.employee.password}
-              name="password"
-              onChange={this.handleChange}
-            />
-          </div>
+
           <div className="d-grid gap-2">
             <button type="submit" className="btn btn-primary">
               Update
@@ -153,8 +131,8 @@ class UpdateEmployee extends Component {
           </div>
         </form>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default UpdateEmployee;
