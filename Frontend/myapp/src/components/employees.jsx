@@ -51,7 +51,6 @@ class Employees extends Component {
               <th>Emp Name</th>
               <th>Date Of Birth</th>
               <th>Email</th>
-              <th>City</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -62,9 +61,10 @@ class Employees extends Component {
                 <td>{emp.empName}</td>
                 <td>{emp.dob}</td>
                 <td>{emp.login.email}</td>
-                <td>{emp.address[0].city}</td>
                 <td>
-                  <i className="bi bi-arrow-repeat me-3" type="button"></i>
+                  <Link to={`/employee/update/${emp.empId}`}>
+                    <i className="bi bi-arrow-repeat me-3"></i>
+                  </Link>
                   <i
                     className="bi bi-trash-fill"
                     type="button"

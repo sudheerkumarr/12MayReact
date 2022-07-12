@@ -1,6 +1,7 @@
 // Functional component
+import axios from "axios";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const AddEmployee = () => {
   // value, name, handleOnChange(), handleSubmit()
@@ -8,11 +9,7 @@ const AddEmployee = () => {
   // useEffect() - called at the time of page loading and when there is change in state
 
   // Define state using useState
-  // const [empName, setEmpName] = useState("");
-  // const [salary, setSalary] = useState(0);
-  // const [dob, setDob] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+
   const [emp, setEmp] = useState({
     empName: "",
     dob: "",
@@ -22,30 +19,46 @@ const AddEmployee = () => {
   });
 
   const handleChange = (event) => {
-    //console.log(event);
-    console.log(event.target.name); // field name
-    console.log(event.target.value); // filed value
-    // if (event.target.name == "empName") {
-    //   setEmpName(event.target.value);
-    // } else if ((event.target.name = "salary")) {
-    //   setSalary(event.target.value);
-    // } else if ((event.target.name = "email")) {
-    //   setEmail(event.target.value);
-    // } else if ((event.target.name = "dob")) {
-    //   setDob(event.target.value);
-    // } else {
-    //   setPassword(event.target.value);
-    // }
-    const newEmp = {};
+    console.log(event.target.name); // returns field name
+    console.log(event.target.value); // retruns filed value
+
+    // copy emp details to newEmp obj
+    const newEmp = { ...emp };
+
+    //newEmp.empId =10;
+    //newEmp["empId"] = 10;
+    //update newEmp object
     newEmp[event.target.name] = event.target.value;
-    setEmp(()=>...emp, newEmp);
+
+    // update emp obj with newEmp obj details
+    setEmp(newEmp);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    //axios.post(url, emp);
+    const newEmp = {
+      empName: emp.empName,
+      dob: emp.dob,
+      salary: emp.salary,
+      login: {
+        email: emp.email,
+        password: emp.password,
+      },
+    };
+    axios
+      .post("http://localhost:8080/employee", newEmp)
+      .then((res) => {
+        console.log(res);
+        alert("Added new employee " + res.data.empName + " successfully!");
+      })
+      .catch((error) => console.log(error));
+  };
   console.log(emp);
   return (
     <div className="w-50 mx-auto mt-3">
       <p className="display-6">Add New Employee</p>
-      <form className="border p-3">
+      <form className="border p-3" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="empName" className="form-label float-start">
             Employee Name
