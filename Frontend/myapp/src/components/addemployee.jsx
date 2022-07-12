@@ -1,7 +1,7 @@
 // Functional component
 import axios from "axios";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddEmployee = () => {
   // value, name, handleOnChange(), handleSubmit()
@@ -9,6 +9,7 @@ const AddEmployee = () => {
   // useEffect() - called at the time of page loading and when there is change in state
 
   // Define state using useState
+  let navigate = useNavigate();
 
   const [emp, setEmp] = useState({
     empName: "",
@@ -51,6 +52,7 @@ const AddEmployee = () => {
       .then((res) => {
         console.log(res);
         alert("Added new employee " + res.data.empName + " successfully!");
+        navigate("/employees");
       })
       .catch((error) => console.log(error));
   };
