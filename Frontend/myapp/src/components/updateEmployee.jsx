@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const UpdateEmployee = () => {
   const params = useParams();
+  let navigate = useNavigate();
   console.log(params);
 
   // define state
@@ -42,11 +43,15 @@ const UpdateEmployee = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // send put request to update
     axios
       .put(`http://localhost:8080/employee/dto/${params.id}`, emp)
       .then((res) => {
         console.log(res);
+        // alert user with msg
         alert("Updated employee " + res.data.empName + " successfully!");
+        // redirect to employees page
+        navigate("/employees");
       })
       .catch((error) => console.log(error));
   };
