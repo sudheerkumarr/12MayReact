@@ -2,6 +2,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// step1:
+//import Joi from "joi-browser";
 
 const AddEmployee = () => {
   // value, name, handleOnChange(), handleSubmit()
@@ -18,6 +20,37 @@ const AddEmployee = () => {
     email: "",
     password: "",
   });
+
+  //Step 2:  Create schema obj for validating form data
+  // const schema = {
+  //   empName: Joi.string().alphanum().min(3).max(30).required(),
+  //   salary: Joi.number().integer().min(5000).max(200000).required(),
+  //   dob: Joi.date().iso().required(),
+  //   email: Joi.string()
+  //     .email({
+  //       minDomainSegments: 2,
+  //       tlds: { allow: ["com", "net"] },
+  //     })
+  //     .required(),
+  //   password: Joi.string().required(),
+  // };
+
+  // // Step 3: Validate
+  // const validate = () => {
+  //   const errors = {}; //object type local variable
+  //   const result = Joi.validate(emp, schema, {
+  //     abortEarly: false,
+  //   });
+  //   console.log(result);
+  //   // setting error messages to error properties
+  //   // ex: errors[username] = "username is required";
+  //   // ex: errors[password] = "password is required";
+  //   if (result.error != null)
+  //     for (let item of result.error.details) {
+  //       errors[item.path[0]] = item.message;
+  //     }
+  //   return Object.keys(errors).length === 0 ? null : errors;
+  // };
 
   const handleChange = (event) => {
     console.log(event.target.name); // returns field name
@@ -47,6 +80,10 @@ const AddEmployee = () => {
         password: emp.password,
       },
     };
+    // validate form data using validate method
+    //const result = validate();
+    //console.log(result);
+
     axios
       .post("http://localhost:8080/employee", newEmp)
       .then((res) => {

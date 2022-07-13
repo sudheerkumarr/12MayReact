@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
+import EmployeeTable from "./employeeTable";
 
 class Employees extends Component {
   state = {
@@ -41,40 +42,10 @@ class Employees extends Component {
     return (
       <div className="w-50 mx-auto">
         <h4 className="mt-3">Employee Details</h4>
-        <Link to="/employee/add" className="btn btn-primary float-end mb-2">
-          Add New
-        </Link>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Emp Id</th>
-              <th>Emp Name</th>
-              <th>Date Of Birth</th>
-              <th>Email</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.employees.map((emp) => (
-              <tr key={emp.empId}>
-                <td>{emp.empId}</td>
-                <td>{emp.empName}</td>
-                <td>{emp.dob}</td>
-                <td>{emp.login.email}</td>
-                <td>
-                  <Link to={`/employee/update/${emp.empId}`}>
-                    <i className="bi bi-arrow-repeat me-3"></i>
-                  </Link>
-                  <i
-                    className="bi bi-trash-fill"
-                    type="button"
-                    onClick={() => this.handleDelete(emp.empId)}
-                  ></i>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <EmployeeTable
+          employees={this.state.employees}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   }
