@@ -16,7 +16,7 @@ const Product = () => {
   console.log(products);
 
   return (
-    <div>
+    <div className="container mt-3">
       <div className="row">
         <aside className="col-sm-12 col-md-2">
           <ul className="list-group">
@@ -31,10 +31,13 @@ const Product = () => {
         </aside>
         <div className="col-sm-12 col-md-10">
           <div className="row">
-            <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-              {products.map((prod) => (
-                <Link to={`/products/get/${prod.id}`}>
-                  <div className="card">
+            {products.map((prod) => (
+              <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-start mb-3 ">
+                <Link
+                  to={`/products/get/${prod.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <div className="card h-100 ">
                     <img
                       src={prod.image}
                       className="card-img-top"
@@ -45,11 +48,14 @@ const Product = () => {
                     <div className="card-body">
                       <small className="card-title">{prod.title}</small>
                     </div>
+                    <small className="card-title text-end">
+                      <i class="bi bi-currency-rupee"></i>
+                      {prod.price}
+                    </small>
                   </div>
                 </Link>
-              ))}
-              ;
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
