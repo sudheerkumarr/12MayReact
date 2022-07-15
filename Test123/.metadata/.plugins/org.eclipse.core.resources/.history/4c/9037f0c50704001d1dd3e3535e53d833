@@ -1,0 +1,9 @@
+package com.example.spring.dto;
+
+@Data
+public class LoginRespDto {
+
+	private String email;
+	private String role;
+	private boolean isLoggedIn;
+}

@@ -1,0 +1,9 @@
+package com.example.spring.dto;
+
+public class RegRespDto {
+
+	private String empName;
+	private String email;
+	private boolean isLoggedIn ;
+	private String role;
+}

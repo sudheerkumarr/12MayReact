@@ -22,7 +22,7 @@ const ProductDetails = () => {
           <img
             src={product.image}
             width="250px"
-            className="shadow p-3 mb-5 bg-body rounded"
+            className="shadow-sm p-3 mb-5 bg-body rounded"
           />
           <input
             type="button"

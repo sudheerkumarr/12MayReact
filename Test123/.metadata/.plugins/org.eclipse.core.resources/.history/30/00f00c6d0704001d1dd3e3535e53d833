@@ -1,0 +1,9 @@
+package com.example.spring.dto;
+
+public class LoginDto {
+	
+	email;
+	privateString password;
+	private String role;
+
+}

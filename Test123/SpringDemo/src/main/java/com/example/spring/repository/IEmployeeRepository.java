@@ -19,8 +19,8 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 
 	// JPQL example
-	//@Query("select e from Employee e where dob=:doBirth")
-	List<Employee> findByDob(@Param("doBirth") LocalDate dob);
+	@Query("select e from Employee e where e.dob=:doBirth")
+	List<Employee> getEmpByDob(@Param("doBirth") LocalDate dob);
 	
 	// find addr based on emp id
 	// Native Query example

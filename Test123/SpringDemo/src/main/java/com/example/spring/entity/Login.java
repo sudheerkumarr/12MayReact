@@ -16,4 +16,6 @@ public class Login {
 	@Column(length=50)
 	private String email;
 	private String password;
+	private String role = "employee";
+	private boolean isLoggedIn = false;
 }

@@ -3,10 +3,16 @@ package com.example.spring.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.example.spring.dto.AddressDto;
+import com.example.spring.dto.EmpDto;
+import com.example.spring.dto.RegRespDto;
+import com.example.spring.dto.RegisterDto;
 import com.example.spring.entity.Address;
 import com.example.spring.entity.Employee;
 import com.example.spring.entity.Skill;
+import com.example.spring.exception.EmployeeFoundException;
 import com.example.spring.exception.EmployeeNotFoundException;
 
 public interface IEmployeeService {
@@ -26,5 +32,8 @@ public interface IEmployeeService {
 	List<Employee> getEmpByDob(LocalDate dob);
 	List<Skill> getEmpSkills();
 	Employee updateEmpDob(int empId, LocalDate date) throws EmployeeNotFoundException;
+	EmpDto getEmpDtoById(int empId) throws EmployeeNotFoundException;
+	EmpDto updateEmpDtoById(int empId, EmpDto empDto) throws EmployeeNotFoundException;
+	RegRespDto regEmployee(RegisterDto emp) throws EmployeeFoundException;
 
 }

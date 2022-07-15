@@ -1,0 +1,13 @@
+package com.example.spring.dto;
+
+import lombok.Data;
+
+@Data
+public class EmpInputDto {
+	private int empId;
+	private String empName;
+	private double salary;
+	private LocalDate dob;
+	private String email;
+	private password;
+}

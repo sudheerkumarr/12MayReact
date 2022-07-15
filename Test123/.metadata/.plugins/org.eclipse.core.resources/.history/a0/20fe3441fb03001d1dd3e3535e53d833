@@ -1,0 +1,10 @@
+package com.example.spring.dto;
+
+public class RegisterDto {
+	
+	private String empName;
+	private String email;
+	private String password;
+	private String role;
+
+}
