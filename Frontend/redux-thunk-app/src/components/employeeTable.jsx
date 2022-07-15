@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const EmployeeTable = (props) => {
+  const login = useSelector((state) => state.login.login);
   return (
     <div>
-      <Link to="/employee/add" className="btn btn-primary float-end mb-2">
-        Add New
-      </Link>
+      {login.loggedIn && login.role == "admin" && (
+        <Link to="/employee/add" className="btn btn-primary float-end mb-2">
+          Add New
+        </Link>
+      )}
       <table className="table">
         <thead>
           <tr>
@@ -14,7 +18,7 @@ const EmployeeTable = (props) => {
             <th>Emp Name</th>
             <th>Date Of Birth</th>
             <th>Email</th>
-            <th>Actions</th>
+            {login.loggedIn && login.role == "admin" && <th>Actions</th>}
           </tr>
         </thead>
         <tbody>
@@ -24,16 +28,18 @@ const EmployeeTable = (props) => {
               <td>{emp.empName}</td>
               <td>{emp.dob}</td>
               <td>{emp.login.email}</td>
-              <td>
-                <Link to={`/employee/update/${emp.empId}`}>
-                  <i className="bi bi-arrow-repeat me-3"></i>
-                </Link>
-                <i
-                  className="bi bi-trash-fill"
-                  type="button"
-                  onClick={() => props.handleDelete(emp.empId)}
-                ></i>
-              </td>
+              {login.loggedIn && login.role == "admin" && (
+                <td>
+                  <Link to={`/employee/update/${emp.empId}`}>
+                    <i className="bi bi-arrow-repeat me-3"></i>
+                  </Link>
+                  <i
+                    className="bi bi-trash-fill"
+                    type="button"
+                    onClick={() => props.handleDelete(emp.empId)}
+                  ></i>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>

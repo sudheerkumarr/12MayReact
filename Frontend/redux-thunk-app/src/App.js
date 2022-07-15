@@ -11,6 +11,7 @@ import Register from "./components/register";
 import Cart from "./components/cart";
 import UpdateEmployee from "./components/updateEmployee";
 import ProductDetails from "./components/productDetails";
+import Logout from "./components/logout";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/employee/update/:id" element={<UpdateEmployee />} />
         <Route path="/products" element={<Product />} />
         <Route path="/products/get/:id" element={<ProductDetails />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
