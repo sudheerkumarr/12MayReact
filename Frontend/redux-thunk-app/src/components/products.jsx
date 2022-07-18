@@ -1,10 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductsAction } from "../actions/productactions";
 import { Link } from "react-router-dom";
 
 const Product = () => {
   const dispatch = useDispatch();
+
+  const [categories, setCategories] = useState([
+    "all",
+    "men's clothing",
+    "jewelery",
+    "women's clothing",
+    "electronics",
+  ]);
+  const [selCategory, setSelCategory] = useState("all");
+  let [filteredItems, setFilteredItems] = useState([]);
+
   //useEffect(func, [conditional stmt])
   // dispatches getAllProductsAction at the time of page loading
   useEffect(() => {
@@ -15,18 +26,40 @@ const Product = () => {
   const products = useSelector((state) => state.fakestore.products);
   console.log(products);
 
+  const handleCategory = (category) => {
+    console.log("Selected Category: " + category);
+
+    if (category == "all") {
+      setFilteredItems(products);
+      setSelCategory(category);
+    } else {
+      let filteredItems = products.filter(
+        (product) => product.category == category
+      );
+      setSelCategory(category);
+      console.log(filteredItems);
+      setFilteredItems(filteredItems);
+    }
+  };
+
   return (
     <div className="container mt-3">
       <div className="row">
         <aside className="col-sm-12 col-md-2">
-          <ul className="list-group">
-            <li className="list-group-item active" aria-current="true">
-              An active item
-            </li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
-            <li className="list-group-item">A fourth item</li>
-            <li className="list-group-item">And a fifth one</li>
+          <ul className="list-group border">
+            {categories.map((category) => (
+              <li
+                className={
+                  selCategory == category
+                    ? "list-group-item active"
+                    : "list -group-item border"
+                }
+                type="button"
+                onClick={() => handleCategory(category)}
+              >
+                {category}
+              </li>
+            ))}
           </ul>
         </aside>
         <div className="col-sm-12 col-md-10">

@@ -15,14 +15,33 @@ export const registerAction = (employee) => async (dispatch) => {
 };
 
 // login action
-export const loginAction = (login) => async (dispatch) => {
-  const result = await axios.post("http://localhost:8080/login/dto", login);
-  console.log(result);
-  console.log(result.data);
-  dispatch({
-    type: "LOGIN",
-    payload: result.data,
-  });
+// export const loginAction = (login) => async (dispatch) => {
+//   const result = await axios.post("http://localhost:8080/login/dto", login);
+//   console.log(result);
+//   console.log(result.data);
+//   dispatch({
+//     type: "LOGIN",
+//     payload: result.data,
+//   });
+// };
+
+export const loginAction = (login) => (dispatch) => {
+  axios
+    .post("http://localhost:8080/login/dto", login)
+    .then((res) => {
+      console.log(res);
+      dispatch({
+        type: "LOGIN",
+        payload: res.data,
+      });
+    })
+    .catch((error) => {
+      console.log(error.response.data.message);
+      dispatch({
+        type: "ERR_RES",
+        payload: error.response.data.message,
+      });
+    });
 };
 
 // logout action
