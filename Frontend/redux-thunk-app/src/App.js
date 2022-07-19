@@ -12,6 +12,7 @@ import Cart from "./components/cart";
 import UpdateEmployee from "./components/updateEmployee";
 import ProductDetails from "./components/productDetails";
 import Logout from "./components/logout";
+import Counter from "./components/counter";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/products" element={<Product />} />
         <Route path="/products/get/:id" element={<ProductDetails />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/counter" element={<Counter />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

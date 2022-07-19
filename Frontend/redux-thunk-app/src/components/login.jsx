@@ -74,7 +74,7 @@ const Login = () => {
         console.log("*********" + lgn.errMsg);
         setErrRes(lgn.errMsg);
       }
-    }, 1000);
+    }, 500);
   };
   console.log(login);
 
