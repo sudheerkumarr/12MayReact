@@ -54,7 +54,7 @@ const Login = () => {
     setLogin(newLogin);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Step3: Call validate function
     // validate login details with schema
@@ -62,27 +62,28 @@ const Login = () => {
 
     if (errors) return;
 
-    // dispatch login action to server
+    // dispatch login action to rest api
     dispatch(loginAction(login));
 
-    alert("Employee  logged in successfully!");
-    navigate("/products");
-
-    //const lgn = useSelector((state) => state.login);
-    //console.log(lgn);
-
-    //if (lgn.login.loggedIn) {
-    //alert("Employee  logged in successfully!");
-    //navigate("/products");
-    //}
+    // Based on loggedIn state redirect user to home or any other page
+    setTimeout(() => {
+      if (lgn.login.loggedIn) {
+        alert("Employee  logged in successfully!");
+        navigate("/products");
+      } else {
+        console.log("*********" + lgn.errMsg);
+        setErrRes(lgn.errMsg);
+      }
+    }, 1000);
   };
   console.log(login);
 
   return (
-    <div>
+    <div className="w-50 mx-auto mt-4">
+      {errRes && <p className="alert alert-danger">{errRes}</p>}
       <form
         onSubmit={handleSubmit}
-        className="w-25 mx-auto border border-secondary rounded mt-4 p-2 shadow-lg p-3 mb-5 bg-body rounded"
+        className="border border-secondary rounded mt-4 p-2 shadow p-3 mb-5 bg-body rounded"
       >
         <p className="text-center fs-4 bg-secondary text-white">Login Form</p>
         <div className="mb-3">

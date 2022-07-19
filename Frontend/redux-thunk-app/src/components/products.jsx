@@ -28,15 +28,13 @@ const Product = () => {
 
   const handleCategory = (category) => {
     console.log("Selected Category: " + category);
-
+    setSelCategory(category);
     if (category == "all") {
       setFilteredItems(products);
-      setSelCategory(category);
     } else {
       let filteredItems = products.filter(
         (product) => product.category == category
       );
-      setSelCategory(category);
       console.log(filteredItems);
       setFilteredItems(filteredItems);
     }
