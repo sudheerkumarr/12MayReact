@@ -1176,3 +1176,54 @@
 [DEBUG] 2022-07-15 12:33:04.662 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
 [INFO ] 2022-07-15 12:33:04.664 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
 [INFO ] 2022-07-15 12:33:13.059 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 8.913 seconds (JVM running for 11.274)
+[INFO ] 2022-07-15 16:43:31.056 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 224 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-15 16:43:31.057 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-15 16:43:31.057 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-15 16:43:37.548 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 224 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-15 16:43:37.548 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-15 16:43:37.549 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-15 16:43:41.300 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 3.812 seconds (JVM running for 15039.516)
+[INFO ] 2022-07-15 17:12:57.135 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 224 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-15 17:12:57.136 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-15 17:12:57.136 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-15 17:13:01.264 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 4.207 seconds (JVM running for 16799.479)
+[INFO ] 2022-07-15 17:13:05.966 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 224 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-15 17:13:05.966 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-15 17:13:05.967 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-15 17:13:09.547 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 3.65 seconds (JVM running for 16807.763)
+[INFO ] 2022-07-15 17:13:12.065 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 224 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-15 17:13:12.066 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-15 17:13:12.066 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-15 17:13:15.370 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 3.371 seconds (JVM running for 16813.585)
+[DEBUG] 2022-07-15 17:18:57.045 [http-nio-8080-exec-6] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:18:57.275 [http-nio-8080-exec-9] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:30:34.735 [http-nio-8080-exec-7] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:30:34.987 [http-nio-8080-exec-8] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:31:09.410 [http-nio-8080-exec-10] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:31:09.473 [http-nio-8080-exec-2] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:31:37.630 [http-nio-8080-exec-3] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:31:37.694 [http-nio-8080-exec-5] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:31:57.393 [http-nio-8080-exec-9] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-15 17:31:57.454 [http-nio-8080-exec-7] EmployeeServiceImpl - Calling empRepo findAll() method
+[INFO ] 2022-07-18 15:17:39.276 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 19648 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-18 15:17:39.282 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-18 15:17:39.283 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-18 15:17:48.294 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 9.748 seconds (JVM running for 13.388)
+[DEBUG] 2022-07-18 16:00:41.638 [http-nio-8080-exec-1] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-18 16:00:42.137 [http-nio-8080-exec-2] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-18 16:02:56.293 [http-nio-8080-exec-4] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-18 16:02:56.387 [http-nio-8080-exec-6] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-19 10:38:36.286 [http-nio-8080-exec-8] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-19 10:38:36.413 [http-nio-8080-exec-9] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-19 10:38:39.115 [http-nio-8080-exec-10] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-19 10:38:39.201 [http-nio-8080-exec-1] EmployeeServiceImpl - Calling empRepo findAll() method
+[INFO ] 2022-07-19 16:11:24.502 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 19648 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-19 16:11:24.503 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-19 16:11:24.503 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-19 16:11:28.905 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 4.512 seconds (JVM running for 89643.259)
+[INFO ] 2022-07-19 16:21:02.923 [restartedMain] SpringDemoApplication - Starting SpringDemoApplication using Java 17 on DESKTOP-NR7OF1C with PID 3032 (F:\Test123\SpringDemo\bin\main started by rskum in F:\Test123\SpringDemo)
+[DEBUG] 2022-07-19 16:21:02.932 [restartedMain] SpringDemoApplication - Running with Spring Boot v2.7.0, Spring v5.3.20
+[INFO ] 2022-07-19 16:21:02.934 [restartedMain] SpringDemoApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2022-07-19 16:21:13.640 [restartedMain] SpringDemoApplication - Started SpringDemoApplication in 11.785 seconds (JVM running for 17.428)
+[DEBUG] 2022-07-20 12:26:19.056 [http-nio-8080-exec-4] EmployeeServiceImpl - Calling empRepo findAll() method
+[DEBUG] 2022-07-20 12:26:19.447 [http-nio-8080-exec-3] EmployeeServiceImpl - Calling empRepo findAll() method

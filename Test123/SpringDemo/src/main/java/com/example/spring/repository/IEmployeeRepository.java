@@ -25,6 +25,8 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Integer> {
 	// find addr based on emp id
 	// Native Query example
 	//@Query(value="select address.addr_id, address.city, address.state from employee inner join address on employee.emp_id=emp_addr_fk where employee.emp_id=:id", nativeQuery=true)
+	@Query(value="select * from employee inner join login on employee.email=login.email where employee.email=:email", nativeQuery=true)
+	Employee getEmpByEmail(@Param("email") String email);
 	
 	
 	

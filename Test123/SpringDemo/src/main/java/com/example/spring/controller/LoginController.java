@@ -3,7 +3,9 @@ package com.example.spring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +17,7 @@ import com.example.spring.exception.EmailNotFoundException;
 import com.example.spring.service.ILoginService;
 
 @RestController
+@CrossOrigin
 public class LoginController {
 	
 	@Autowired
@@ -32,8 +35,8 @@ public class LoginController {
 		return new ResponseEntity<>(login, HttpStatus.OK);
 	}
 	
-	@PatchMapping("/logout")
-	ResponseEntity<LoginRespDto> logout(@RequestBody String email) throws EmailNotFoundException {
+	@PatchMapping("/logout/{email}")
+	ResponseEntity<LoginRespDto> logout(@PathVariable String email) throws EmailNotFoundException {
 		LoginRespDto resp = loginServ.logout(email);
 		return new ResponseEntity<>(resp, HttpStatus.OK);
 	}

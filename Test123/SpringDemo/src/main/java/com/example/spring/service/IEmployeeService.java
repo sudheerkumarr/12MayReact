@@ -35,5 +35,6 @@ public interface IEmployeeService {
 	EmpDto getEmpDtoById(int empId) throws EmployeeNotFoundException;
 	EmpDto updateEmpDtoById(int empId, EmpDto empDto) throws EmployeeNotFoundException;
 	RegRespDto regEmployee(RegisterDto emp) throws EmployeeFoundException;
+	Employee getEmpByEmail(String email);
 
 }

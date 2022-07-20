@@ -268,4 +268,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		
 	}
 
+	@Override
+	public Employee getEmpByEmail(String email) {
+		return empRepo.getEmpByEmail(email);
+	}
+
 }

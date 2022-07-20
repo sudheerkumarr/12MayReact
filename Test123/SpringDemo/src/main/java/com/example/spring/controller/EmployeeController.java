@@ -61,6 +61,12 @@ public class EmployeeController {
 		return new ResponseEntity<>(emp, HttpStatus.OK);
 	}
 
+	@GetMapping("/employee/email/{email}")
+	ResponseEntity<Employee> getEmpByEmail(@PathVariable("email") String email) throws EmployeeNotFoundException {
+		Employee emp = empServ.getEmpByEmail(email);
+		return new ResponseEntity<>(emp, HttpStatus.OK);
+	}
+	
 	// add employee
 	@PostMapping("/employee")
 	ResponseEntity<Employee> addEmployee(@Valid @RequestBody Employee emp) {
