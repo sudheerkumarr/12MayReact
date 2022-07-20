@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductsAction } from "../actions/productactions";
-import { Link } from "react-router-dom";
+
+import Card from "./card";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,8 @@ const Product = () => {
     "women's clothing",
     "electronics",
   ]);
+
+  const [searchName, setSearchName] = useState("");
   const [selCategory, setSelCategory] = useState("all");
   let [filteredItems, setFilteredItems] = useState([]);
 
@@ -40,10 +43,20 @@ const Product = () => {
     }
   };
 
+  let [searchProducts, setSearchProducts] = useState([]);
+  const handleSearch = (event) => {
+    setSearchName(event.target.value);
+    console.log(event.target.value);
+    searchProducts = products.filter((prod) =>
+      prod.title.toLowerCase().includes(event.target.value)
+    );
+    setSearchProducts(searchProducts);
+  };
+
   return (
     <div className="container mt-3">
       <div className="row">
-        <aside className="col-sm-12 col-md-2">
+        <aside className="col-sm-12 col-md-2 my-3">
           <ul className="list-group border">
             {categories.map((category) => (
               <li
@@ -61,32 +74,21 @@ const Product = () => {
           </ul>
         </aside>
         <div className="col-sm-12 col-md-10">
+          <form className="my-3 w-25">
+            <input
+              type="search"
+              placeholder="Search By Name"
+              className="form-control"
+              name="searchName"
+              value={searchName}
+              onChange={handleSearch}
+            />
+          </form>
+
           <div className="row">
-            {products.map((prod) => (
-              <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-start mb-3 ">
-                <Link
-                  to={`/products/get/${prod.id}`}
-                  style={{ textDecoration: "none" }}
-                >
-                  <div className="card h-100 ">
-                    <img
-                      src={prod.image}
-                      className="card-img-top"
-                      alt={prod.title}
-                      width="120px"
-                      height="120px"
-                    />
-                    <div className="card-body">
-                      <small className="card-title">{prod.title}</small>
-                    </div>
-                    <small className="card-title text-end">
-                      <i class="bi bi-currency-rupee"></i>
-                      {prod.price}
-                    </small>
-                  </div>
-                </Link>
-              </div>
-            ))}
+            {searchProducts.length != 0
+              ? searchProducts.map((prod) => <Card prod={prod} />)
+              : products.map((prod) => <Card prod={prod} />)}
           </div>
         </div>
       </div>

@@ -13,6 +13,7 @@ import UpdateEmployee from "./components/updateEmployee";
 import ProductDetails from "./components/productDetails";
 import Logout from "./components/logout";
 import Counter from "./components/counter";
+import Profile from "./components/profile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/products/get/:id" element={<ProductDetails />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
